@@ -19,10 +19,33 @@
 <body>
     <div id="map" />
 
-    <div id="divTop"></div>
+    <div id="divMenuBar" class="container menuBar">
+        <div id="divMenuBarIcon">
+            <button type="button" class="material-icons md-dark" onclick="openPanel();">menu</button>
+        </div>
+        <div class="divider"></div>
+        <div id="divMenuBarTitle">
+            <h1>Spokane Maps</h1>
+        </div>
+        <div class="divider"></div>
+        <div id="divMenuBarSearchBox">
+            <input type="text" placeholder="Find an address" />
+        </div>
+        <div id="divMenuBarSearchButton">
+            <button type="button" class="material-icons md-dark">search</button>
+        </div>
+        <div class="divider"></div>
+        <div id="divMenuBarPermit">
+            <button type="button" class="material-icons md-dark">place</button>
+        </div>
+        <div id="divMenuBarAlert">
+            <button type="button" class="material-icons md-dark">add_alert</button>
+        </div>
+    </div>
+
     <div id="divLeft" class="leftPanel"></div>
+
     <div id="divRight" class="rightPanel"></div>
-    <div id="divFloat6"></div>
 
     <script src="_script/map1.0.0.js"></script>
 </body>
