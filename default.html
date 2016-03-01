@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <!--<link rel="stylesheet" href="_css/icon.css" />-->
     <link rel="stylesheet" href="_css/map1.0.0.css" />
 
     <script src="//cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet.js"></script>
@@ -18,10 +19,13 @@
 </head>
 <body>
     <div id="map" />
+    <div id="mapDisabled" class="container"></div>
 
+
+    <!--Top Menu-->
     <div id="divMenuBar" class="container menuBar">
         <div id="divMenuBarIcon">
-            <button type="button" class="material-icons md-dark" onclick="openPanel();">menu</button>
+            <button type="button" class="material-icons md-dark" onclick="toggleMenu();">menu</button>
         </div>
         <div class="divider"></div>
         <div id="divMenuBarTitle">
@@ -29,27 +33,61 @@
         </div>
         <div class="divider"></div>
         <div id="divMenuBarSearchBox">
-            <input type="text" placeholder="Find an address" />
+            <input type="text" class="searchBox" placeholder="Find an address" />
         </div>
         <div id="divMenuBarSearchButton">
             <button type="button" class="material-icons md-dark">search</button>
         </div>
         <div class="divider"></div>
         <div id="divMenuBarPermit">
-            <button type="button" class="material-icons md-dark">place</button>
+            <button type="button" class="material-icons orange600" title="Alerts">add_alert</button>
         </div>
         <div id="divMenuBarAlert">
-            <button type="button" class="material-icons md-dark">add_alert</button>
+            <button type="button" class="material-icons md-dark">place</button>
         </div>
         <div id="divMenuBarLogin">
             <button type="button" class="material-icons md-dark">person</button>
         </div>
     </div>
 
-    <div id="divLeft" class="leftPanel"></div>
 
-    <div id="divRight" class="rightPanel"></div>
+    <!--Left Panel-->
+    <div id="divLeft" class="container leftPanel">
 
+        <div id="divLeftTitle">
+            <div class="titleBar">
+                <!--<a href="http://www.spokanecity.org/" target="_blank"><span class="icon2-logo"></span></a>-->
+                <h1>Spokane Maps</h1>
+            </div>
+            <div class="titleBarClose">
+                <button type="button" class="material-icons md-dark" onclick="toggleMenu();">clear</button>
+            </div>
+        </div>
+
+        <div id="divLeftContent" class="content">
+            <ul>
+                <li><a><span class="material-icons md-dark orange600">add_alert</span><span>Setup Alerts</span></a></li>
+                <li><a><span class="material-icons md-dark">place</span><span>Permit Filters</span></a></li>
+                <li><a><span class="material-icons md-dark">assessment</span><span>Analytics</span></a></li>
+            </ul>
+            <ul>
+                <li><a><span class="material-icons md-dark">person</span><span>Sign In</span></a></li>
+            </ul>
+            <ul>
+                <li><a><span class="material-icons md-dark">map</span><span>Street Map</span></a></li>
+                <li><a><span class="material-icons md-dark">satellite</span><span>Satellite Map</span></a></li>
+            </ul>
+            <ul>
+                <li><a><span class="material-icons md-dark">list</span><span>Map Legend</span></a></li>
+                <li><a><span class="material-icons md-dark">share</span><span>Share Link</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--Right Panel-->
+    <div id="divRight" class="container rightPanel"></div>
+
+    <!--Map Scripts-->
     <script src="_script/map1.0.0.js"></script>
 </body>
 </html>

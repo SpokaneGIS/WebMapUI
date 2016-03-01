@@ -19,3 +19,22 @@ cosgis.basemap = L.esri.basemapLayer('Topographic', { detectRetina: true }).addT
 //Controls
 L.control.zoom({ position: 'bottomright' }).addTo(cosgis.map);
 L.control.scale().addTo(cosgis.map);
+
+//-------------------------------------//
+//Methods
+//-------------------------------------//
+
+//UI
+function fade(Id) {
+    $(Id).fadeToggle("fast", "linear");
+}
+
+function togglePanel(panelID) {
+    $(panelID).toggle('slide', {}, 400);
+}
+
+function toggleMenu() {
+    fade('#mapDisabled');
+    fade('#divLeft');
+}
+

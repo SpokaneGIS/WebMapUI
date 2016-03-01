@@ -1,41 +1,60 @@
 ﻿* { border: 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-family: Roboto,arial,sans-serif; font-size: 1em; line-height: 1em; margin: 0; padding: 0; vertical-align: middle; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; }
-html, body, #map { height: 100%; width: 100%; }
+html, body, #map, #mapDisabled { height: 100%; width: 100%; }
 body { background-color: #fff; overflow: hidden; }
 #map { position: relative; }
+#mapDisabled { display: none; opacity: 0.3; background-color: #000; z-index: 1001; top: 0; right: auto; bottom: auto; left: 0; }
 p { line-height: 1.25em; padding: 0.25em 0.25em 0.5em; text-align: left; }
 h1 { margin: 0 auto; padding: 0; font-size: 1em; line-height: 1.5em; height: 1.5em; }
 textarea:focus, input:focus { outline: none; }
+li { padding: 0; margin: 0 auto; }
+a, button { cursor: pointer; }
 
 /*Content containers*/
-.container { background-color: #ccc; margin: 0 auto; padding: 0; z-index: 1000; position: absolute; }
+.container { margin: 0 auto; padding: 0; position: absolute; }
 
 /*Top menu bar*/
-.menuBar { background-color: #fff; border: 1px solid #ccc; display: block; float: left; height: 3em; line-height: 3em; width: auto; min-width: 20em; top: 0.5em; right: auto; bottom: auto; left: 0.5em; }
-    .menuBar div { float: left; display: block; padding: 0.75em 0.5em; position: relative; cursor: pointer; }
+.menuBar { background-color: #fff; border: 1px solid #ccc; display: block; height: 3em; line-height: 3em; width: auto; min-width: 20em; z-index: 1000; top: 0.5em; right: auto; bottom: auto; left: 0.5em; }
+    .menuBar div { cursor: pointer; }
+    .menuBar div { float: left; display: block; padding: 0.75em 0.5em; position: relative; }
         .menuBar div.divider { border-right: 1px solid #ccc; height: 1.5em; padding: 0; top: 0.75em; }
-#divMenuBarSearchBox input { height: 1.5em; line-height: 1.5em; width: 14em; border: none; }
+    .menuBar .searchBox { height: 1.5em; line-height: 1.5em; width: 14em; border: none; }
 
 
-/*Left sliding panel*/
-.leftPanel { background-color: #ccc; display: none; float: left; height: 100%; margin: 0 auto; padding: 0; width: 20em; max-width: 30%; z-index: 2000; position: absolute; top: 0; right: auto; bottom: 0; left: 0; }
+/*Left slide out panel*/
+.leftPanel { background-color: #fff; border-right: 1px solid #999; display: none; height: 100%; width: 20em; max-width: 33%; z-index: 1002; top: 0; right: auto; bottom: 0; left: 0; }
+    .leftPanel .titlebar { background-color: #eee; border-bottom: 1px solid #ccc; height: 3em; line-height: 3em; position: relative; }
+        .leftPanel .titleBar h1 { height: 3em; line-height: 3em; padding: 0 0.5em; }
+    .leftPanel .titleBarClose { background-color: #eee; border-bottom: 1px solid #ccc; height: 3em; line-height: 3em; text-align: center; width: 3em; position: absolute; top: 0; right: 0; bottom: auto; left: auto; }
+        .leftPanel .titleBarClose button { padding: 0.5em; }
 
-.rightPanel { background-color: #ccc; display: block; float: right; height: 100%; margin: 0 auto; padding: 0; width: 20em; max-width: 30%; z-index: 2001; position: absolute; top: 0; right: 0; bottom: 0; left: auto; }
+    .leftPanel .content { height: auto; margin: 0 auto; overflow: auto; padding: 1em; width: 100%; z-index: 2000; position: absolute; top: 3em; bottom: 0; left: 0; }
+        .leftPanel .content ul:first-child { padding: 0 0 0.5em 0; }
+        .leftPanel .content ul:last-child { border-bottom: none; }
+        .leftPanel .content ul { border-bottom: 1px solid #ccc; padding: 0.5em 0; }
+        .leftPanel .content li { list-style: none; padding: 0.375em; }
+            .leftPanel .content li:hover { background-color: #ddd; }
+            .leftPanel .content li a { display: inline-block; width: 100%; color: rgba(0, 0, 0, 0.75); font-size: 95%; }
+            .leftPanel .content li span:first-child { width: 15%; }
+            .leftPanel .content li span:last-child { width: 85%; }
+/*.leftPanel .content .divider { border-top: 1px solid #777; padding-top: 1em; }*/
+
+/*Right slide out panel*/
+.rightPanel { background-color: #fff; border-left: 1px solid #ccc; display: none; height: 100%; width: 20em; max-width: 33%; z-index: 1003; top: 0; right: 0; bottom: 0; left: auto; }
 
 
 /*Leaflet overrides*/
-.leaflet-container { font-size: 1em; cursor: default; }
+.leaflet-container { font-size: 1em; cursor: auto; }
 
 /*Google Material Icons*/
-/* Rules for sizing the icon. */
+/*Sizing*/
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
-
-/* Rules for using icons as black on a light background. */
-.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); background-color: transparent; }
-    .material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
-
-/* Rules for using icons as white on a dark background. */
-.material-icons.md-light { color: rgba(255, 255, 255, 1); background-color: transparent; }
-    .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+/*Colors*/
+.material-icons { background-color: transparent; }
+    .material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+        .material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+    .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+        .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+    .material-icons.orange600 { color: #FB8C00; }
