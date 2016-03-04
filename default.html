@@ -19,72 +19,88 @@
 </head>
 <body>
     <div id="map" />
-    <div id="mapDisabled" class="container"></div>
+    <div id="map-disabled" class="container"></div>
 
-
-    <!--Top Menu-->
-    <div id="divMenuBar" class="container menuBar">
-        <div id="divMenuBarIcon">
+    <!--Search box-->
+    <div id="search" class="container search">
+        <div>
             <button type="button" class="material-icons md-dark" onclick="toggleMenu();">menu</button>
         </div>
-        <div class="divider"></div>
-        <div id="divMenuBarTitle">
+        <div class="search-divider"></div>
+        <div>
             <h1>Spokane Maps</h1>
         </div>
-        <div class="divider"></div>
-        <div id="divMenuBarSearchBox">
-            <input type="text" class="searchBox" placeholder="Find an address" />
+        <div class="search-divider"></div>
+        <div>
+            <form>
+                <input type="text" class="search-address" placeholder="Find an address" />
+            </form>
         </div>
-        <div id="divMenuBarSearchButton">
+        <div>
             <button type="button" class="material-icons md-dark">search</button>
-        </div>
-        <div class="divider"></div>
-        <div id="divMenuBarPermit">
-            <button type="button" class="material-icons orange600" title="Alerts">add_alert</button>
-        </div>
-        <div id="divMenuBarAlert">
-            <button type="button" class="material-icons md-dark">place</button>
-        </div>
-        <div id="divMenuBarLogin">
-            <button type="button" class="material-icons md-dark">person</button>
         </div>
     </div>
 
 
-    <!--Left Panel-->
-    <div id="divLeft" class="container leftPanel">
-
-        <div id="divLeftTitle">
-            <div class="titleBar">
+    <!--Map control menu-->
+    <div id="menu" class="container menu">
+        <div>
+            <div class="menu-header">
                 <!--<a href="http://www.spokanecity.org/" target="_blank"><span class="icon2-logo"></span></a>-->
                 <h1>Spokane Maps</h1>
             </div>
-            <div class="titleBarClose">
+            <div class="menu-close">
                 <button type="button" class="material-icons md-dark" onclick="toggleMenu();">clear</button>
             </div>
         </div>
 
-        <div id="divLeftContent" class="content">
+        <div class="menu-content">
             <ul>
-                <li><a><span class="material-icons md-dark orange600">add_alert</span><span>Setup email alerts</span></a></li>
+                <li><a onclick="toggleSubMenu();"><span class="material-icons md-dark orange600">add_alert</span><span>Setup email alerts</span></a></li>
                 <li><a><span class="material-icons md-dark">place</span><span>Filter permits</span></a></li>
                 <li><a><span class="material-icons md-dark">assessment</span><span>Analytics</span></a></li>
             </ul>
             <ul>
-                <li><a><span class="material-icons md-dark">person</span><span>Sign in</span></a></li>
+                <li><a><span class="material-icons md-dark green600">person</span><span>My account</span></a></li>
             </ul>
             <ul>
                 <li><a><span class="material-icons md-dark">map</span><span>Street map</span></a></li>
-                <li><a><span class="material-icons md-dark">satellite</span><span>Satellite map</span></a></li>
+                <li><a><span class="material-icons md-dark md-inactive">satellite</span><span>Satellite map</span></a></li>
             </ul>
             <ul>
                 <li><a><span class="material-icons md-dark">list</span><span>Map legend</span></a></li>
                 <li><a><span class="material-icons md-dark">share</span><span>Share link</span></a></li>
             </ul>
         </div>
+    </div>
+
+
+    <!--Submenu forms-->
+    <div id="submenu" class="container submenu">
+        <div>
+            <div class="menu-header">
+                <h1><span class="material-icons md-dark orange600">add_alert</span>Email Alerts</h1>
+            </div>
+            <div class="menu-close">
+                <button type="button" class="material-icons md-dark" onclick="toggleSubMenu();">clear</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Toolbar and buttons-->
+    <div id="toolbar">
 
     </div>
 
+
+    <!--Query results-->
+    <div id="data" class="container data">
+
+    </div>
+
+
+    </div>-->
     <!--Right Panel-->
     <div id="divRight" class="container rightPanel"></div>
 

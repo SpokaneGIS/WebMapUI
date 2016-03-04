@@ -53,8 +53,12 @@ function showPanel(panelID, slideDirection) {
 }
 
 function toggleMenu() {
-    fade('#mapDisabled');
-    togglePanel('#divLeft', 'left');
+    fade('#map-disabled');
+    togglePanel('#menu', 'left');
+}
+
+function toggleSubMenu() {
+    togglePanel('#submenu', 'left');
 }
 
 function disableMapClick() {
