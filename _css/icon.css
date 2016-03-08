@@ -20,19 +20,6 @@
 	font-style: normal;
 }
 
-[class*="icon-"] {
-	font-family: 'icomoon';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
 
 [class*="icon2-"] {
 	font-family: 'glyphs';
@@ -41,7 +28,8 @@
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
-	line-height: 1;
+    font-size: 2em;
+    color: #333;
 
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;

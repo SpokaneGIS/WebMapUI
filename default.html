@@ -8,21 +8,20 @@
 
     <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <!--<link rel="stylesheet" href="_css/icon.css" />-->
+    <link rel="stylesheet" href="_css/icon.css" />
     <link rel="stylesheet" href="_css/map1.0.0.css" />
 
     <script src="//cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet.js"></script>
     <script src="//cdn.jsdelivr.net/leaflet.esri/2.0.0-beta.7/esri-leaflet.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
-
 </head>
 <body>
     <div id="map" />
     <div id="map-disabled" class="container"></div>
 
     <!--Search box-->
-    <div id="search" class="container search">
+    <div id="search" class="container search shadow1">
         <div>
             <button type="button" class="material-icons md-dark" onclick="toggleMenu();">menu</button>
         </div>
@@ -45,19 +44,18 @@
     <!--Map control menu-->
     <div id="menu" class="container menu">
         <div>
-            <div class="menu-header">
-                <!--<a href="http://www.spokanecity.org/" target="_blank"><span class="icon2-logo"></span></a>-->
-                <h1>Spokane Maps</h1>
+            <div class="panel-header">
+                <h1><span class="icon2-logo"></span>Spokane Maps</h1>
             </div>
-            <div class="menu-close">
+            <div class="panel-close">
                 <button type="button" class="material-icons md-dark" onclick="toggleMenu();">clear</button>
             </div>
         </div>
 
         <div class="menu-content">
             <ul>
-                <li><a onclick="toggleSubMenu();"><span class="material-icons md-dark orange600">add_alert</span><span>Setup email alerts</span></a></li>
-                <li><a><span class="material-icons md-dark">place</span><span>Filter permits</span></a></li>
+                <li><a onclick="openSubMenu('#alert-panel');"><span class="material-icons md-dark orange600">add_alert</span><span>Setup email alerts</span></a></li>
+                <li><a onclick="openSubMenu('#filter-panel');"><span class="material-icons md-dark">place</span><span>Filter permits</span></a></li>
                 <li><a><span class="material-icons md-dark">assessment</span><span>Analytics</span></a></li>
             </ul>
             <ul>
@@ -75,34 +73,63 @@
     </div>
 
 
-    <!--Submenu forms-->
-    <div id="submenu" class="container submenu">
+    <!--Submenu Panels-->
+    <!--alerts-->
+    <div id="alert-panel" class="container submenu shadow2">
         <div>
-            <div class="menu-header">
+            <div class="panel-header">
                 <h1><span class="material-icons md-dark orange600">add_alert</span>Email Alerts</h1>
             </div>
-            <div class="menu-close">
-                <button type="button" class="material-icons md-dark" onclick="toggleSubMenu();">clear</button>
+            <div class="panel-close">
+                <button type="button" class="material-icons md-dark" onclick="closeSubMenu('#alert-panel');" value="alert-panel">clear</button>
             </div>
+        </div>
+        <div class="submenu-content">
+
+        </div>
+    </div>
+    <!--filters-->
+    <div id="filter-panel" class="container submenu shadow2">
+        <div>
+            <div class="panel-header">
+                <h1><span class="material-icons md-dark">place</span>Filter Permits</h1>
+            </div>
+            <div class="panel-close">
+                <button type="button" class="material-icons md-dark" onclick="closeSubMenu('#filter-panel');" value="filter-panel">clear</button>
+            </div>
+        </div>
+        <div class="submenu-content">
+
         </div>
     </div>
 
 
-    <!--Toolbar and buttons-->
-    <div id="toolbar">
+
+    <!--Toolbar-->
+    <div id="toolbar" class="container toolbar shadow1">
+        <div class="toolbar-item">
+            <button type="button" class="toolbar-button" onclick="openSubMenu('#alert-panel');"><span class="text">Alerts</span><span class="material-icons md-dark orange600">add_alert</span></button>
+        </div>
+        <div class="toolbar-item">
+            <button type="button" class="toolbar-button" onclick="openSubMenu('#filter-panel');"><span class="text">Filters</span><span class="material-icons md-dark">place</span></button>
+        </div>
+        <div class="toolbar-item">
+            <button type="button" class="toolbar-button"><span class="text">Account</span><span class="material-icons md-dark green600">person</span></button>
+        </div>
+    </div>
+
+
+    <!--Account-->
+    <div id="account" class="container account">
 
     </div>
 
 
-    <!--Query results-->
+    <!--Results-->
     <div id="data" class="container data">
 
     </div>
 
-
-    </div>-->
-    <!--Right Panel-->
-    <div id="divRight" class="container rightPanel"></div>
 
     <!--Map Scripts-->
     <script src="_script/map1.0.0.js"></script>

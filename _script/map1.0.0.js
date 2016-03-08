@@ -57,8 +57,24 @@ function toggleMenu() {
     togglePanel('#menu', 'left');
 }
 
+function openSubMenu(panelID) {
+    //Hide all open 
+    $('.submenu').each(function () {
+        if ($(this).is(":visible"))
+            $(this).hide();
+    });
+    showPanel(panelID, 'right');
+    hidePanel('#menu', 'left');
+    if ($('#map-disabled').is(":visible"))
+        fade('#map-disabled');
+}
+
+function closeSubMenu(panelID) {
+    hidePanel(panelID, 'right');
+}
+
 function toggleSubMenu() {
-    togglePanel('#submenu', 'left');
+    togglePanel('.submenu', 'right');
 }
 
 function disableMapClick() {
