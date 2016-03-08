@@ -20,7 +20,6 @@
 	font-style: normal;
 }
 
-
 [class*="icon2-"] {
 	font-family: 'glyphs';
 	speak: none;
@@ -30,12 +29,27 @@
 	text-transform: none;
     font-size: 2em;
     color: #333;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
 
-	/* Better Font Rendering =========== */
+[class*="icon3-"] {
+	font-family: 'glyphs';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+    font-size: 1.5em;
+    color: #333;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
 .icon2-logo:before {
+	content: "\e017";
+}
+
+.icon3-logo:before {
 	content: "\e017";
 }

@@ -77,6 +77,24 @@ function toggleSubMenu() {
     togglePanel('.submenu', 'right');
 }
 
+function openAccountPanel(panelID) {
+    $('.submenu').each(function () {
+        if ($(this).is(":visible"))
+            $(this).hide();
+    });
+    fade(panelID);
+    hidePanel('#menu', 'left');
+    if (!$('#map-disabled').is(":visible"))
+        fade('#map-disabled');
+}
+
+function closeAccountPanel(panelID) {
+    fade(panelID);
+    if ($('#map-disabled').is(":visible"))
+        fade('#map-disabled');
+}
+
+//
 function disableMapClick() {
     var divs = ['divMenuBar', 'divLeft', 'divRight', 'mapDisabled'];
     for (var i = 0; i < divs.length; i++) {
