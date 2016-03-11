@@ -18,49 +18,45 @@
 </head>
 <body>
     <div id="map" />
-    <div id="map-disabled" class="container"></div>
+    <div id="map-disabled"></div>
 
     <!--Search box-->
-    <div id="search" class="container search shadow1">
-        <div class="search-item">
-            <button type="button" class="search-button" onclick="toggleMenu();"><span class="material-icons md-dark">menu</span></button>
+    <div id="searchbox" class="searchbox shadow1">
+        <div class="searchbox-button-container">
+            <button type="button" class="searchbox-button" onclick="toggleMenu();"><span class="material-icons md-dark">menu</span></button>
         </div>
-        <div class="search-divider"></div>
-        <!--<div class="search-title">
-            <h1><span class="icon3-logo"></span>Permits</h1>
-        </div>
-        <div class="search-divider search-title"></div>-->
-        <div class="search-box">
-            <form>
-                <input type="text" class="search-input" placeholder="Find an address" />
+        <div class="searchbox-divider"></div>
+        <div class="searchbox-input-container">
+            <form id="searchbox-form">
+                <input type="text" class="searchbox-input" placeholder="Find an address" />
             </form>
         </div>
-        <div class="search-item">
-            <button type="button" class="search-button"><span class="material-icons md-dark">search</span></button>
+        <div class="searchbox-button-container">
+            <button type="button" class="searchbox-button"><span class="material-icons md-dark">search</span></button>
         </div>
-        <div class="search-divider"></div>
-        <div class="search-title">
-            <h1><span class="icon2-logo"></span>Really Long App Name</h1>
+        <div class="searchbox-divider"></div>
+        <div class="searchbox-title-container">
+            <h1><span class="icon2-logo"></span>Permits</h1>
         </div>
     </div>
 
 
     <!--Toolbar-->
-    <div id="toolbar" class="container toolbar shadow1">
-        <div class="toolbar-item">
+    <div id="toolbar" class="toolbar shadow1">
+        <div class="toolbar-button-container">
             <button type="button" class="toolbar-button" onclick="openSubMenu('#alert-panel');"><span class="text">Alerts</span><span class="material-icons md-dark orange600">add_alert</span></button>
         </div>
-        <div class="toolbar-item">
+        <div class="toolbar-button-container">
             <button type="button" class="toolbar-button" onclick="openSubMenu('#filter-panel');"><span class="text">Filters</span><span class="material-icons md-dark">place</span></button>
         </div>
-        <div class="toolbar-item">
+        <div class="toolbar-button-container">
             <button type="button" class="toolbar-button" onclick="openAccountPanel('#account-panel');"><span class="text">Account</span><span class="material-icons md-dark">person</span></button>
         </div>
     </div>
 
 
     <!--Map control menu-->
-    <div id="menu" class="container menu">
+    <div id="menu" class="menu">
         <div>
             <div class="panel-header">
                 <h1><span class="icon2-logo"></span>Spokane Maps</h1>
@@ -70,22 +66,22 @@
             </div>
         </div>
 
-        <div class="menu-content">
-            <ul>
-                <li><a onclick="openSubMenu('#alert-panel');"><span class="material-icons md-dark orange600">add_alert</span><span>Setup email alerts</span></a></li>
-                <li><a onclick="openSubMenu('#filter-panel');"><span class="material-icons md-dark">place</span><span>Filter permits</span></a></li>
-                <li><a class="inactive"><span class="material-icons md-dark md-inactive">assessment</span><span>Analytics*</span></a></li>
+        <div class="menu-container">
+            <ul class="menu-list">
+                <li class="menu-list-item"><a onclick="openSubMenu('#alert-panel');"><span class="material-icons md-dark orange600">add_alert</span><span>Setup email alerts</span></a></li>
+                <li class="menu-list-item"><a onclick="openSubMenu('#filter-panel');"><span class="material-icons md-dark">place</span><span>Filter permits</span></a></li>
+                <li class="menu-list-item"><a class="inactive"><span class="material-icons md-dark md-inactive">assessment</span><span>Analytics*</span></a></li>
             </ul>
-            <ul>
-                <li><a onclick="openAccountPanel('#account-panel');"><span class="material-icons md-dark green600">person</span><span>My account</span></a></li>
+            <ul class="menu-list">
+                <li class="menu-list-item"><a onclick="openAccountPanel('#account-panel');"><span class="material-icons md-dark green600">person</span><span>My account</span></a></li>
             </ul>
-            <ul>
-                <li><a><span class="material-icons md-dark">map</span><span>Street map</span></a></li>
-                <li><a><span class="material-icons md-dark md-inactive">satellite</span><span>Satellite map</span></a></li>
+            <ul class="menu-list">
+                <li class="menu-list-item"><a><span class="material-icons md-dark">map</span><span>Street map</span></a></li>
+                <li class="menu-list-item"><a><span class="material-icons md-dark md-inactive">satellite</span><span>Satellite map</span></a></li>
             </ul>
-            <ul>
-                <li><a onclick="openSubMenu('#legend-panel');"><span class="material-icons md-dark">list</span><span>Map legend</span></a></li>
-                <li><a class="inactive"><span class="material-icons md-dark md-inactive">share</span><span>Share link*</span></a></li>
+            <ul class="menu-list">
+                <li class="menu-list-item"><a onclick="openSubMenu('#legend-panel');"><span class="material-icons md-dark">list</span><span>Map legend</span></a></li>
+                <li class="menu-list-item"><a class="inactive"><span class="material-icons md-dark md-inactive">share</span><span>Share link*</span></a></li>
             </ul>
             <p style="color:#999; padding-top:1em; font-size:90%;">* Future Implementation TBD</p>
         </div>
