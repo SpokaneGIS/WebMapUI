@@ -21,20 +21,20 @@
     <div id="map-disabled"></div>
 
     <!--Search box-->
-    <div id="searchbox" class="searchbox shadow1">
-        <div class="searchbox-button-container">
-            <button type="button" class="searchbox-button" onclick="toggleMenu();"><span class="material-icons md-dark">menu</span></button>
+    <div id="searchbox" class="searchbox container-shadow1">
+        <div class="searchbox-btn-container">
+            <button type="button" class="searchbox-btn" onclick="toggleMenu();"><span class="material-icons md-dark">menu</span></button>
         </div>
-        <div class="searchbox-divider"></div>
+        <div class="searchbox-vertical-divider"></div>
         <div class="searchbox-input-container">
             <form id="searchbox-form">
-                <input type="text" class="searchbox-input" placeholder="Find an address" />
+                <input type="text" placeholder="Find an address" />
             </form>
         </div>
-        <div class="searchbox-button-container">
-            <button type="button" class="searchbox-button"><span class="material-icons md-dark">search</span></button>
+        <div class="searchbox-btn-container">
+            <button type="button" class="searchbox-btn"><span class="material-icons md-dark">search</span></button>
         </div>
-        <div class="searchbox-divider"></div>
+        <div class="searchbox-vertical-divider"></div>
         <div class="searchbox-title-container">
             <h1><span class="icon2-logo"></span>Permits</h1>
         </div>
@@ -42,22 +42,22 @@
 
 
     <!--Toolbar-->
-    <div id="toolbar" class="toolbar shadow1">
-        <div class="toolbar-button-container">
-            <button type="button" class="toolbar-button" onclick="openSubMenu('#alert-panel');"><span class="text">Alerts</span><span class="material-icons md-dark orange600">add_alert</span></button>
+    <div id="toolbar" class="toolbar container-shadow1">
+        <div class="tool-container">
+            <button type="button" class="tool-btn" onclick="openSubMenu('#alert-panel');"><span class="tool-text">Alerts</span><span class="material-icons md-dark orange600">add_alert</span></button>
         </div>
-        <div class="toolbar-button-container">
-            <button type="button" class="toolbar-button" onclick="openSubMenu('#filter-panel');"><span class="text">Filters</span><span class="material-icons md-dark">place</span></button>
+        <div class="tool-container">
+            <button type="button" class="tool-btn" onclick="openSubMenu('#filter-panel');"><span class="text">Filters</span><span class="material-icons md-dark">place</span></button>
         </div>
-        <div class="toolbar-button-container">
-            <button type="button" class="toolbar-button" onclick="openAccountPanel('#account-panel');"><span class="text">Account</span><span class="material-icons md-dark">person</span></button>
+        <div class="tool-container">
+            <button type="button" class="tool-btn" onclick="openAccountPanel('#account-panel');"><span class="text">Account</span><span class="material-icons md-dark">person</span></button>
         </div>
     </div>
 
 
     <!--Map control menu-->
     <div id="menu" class="menu">
-        <div>
+        <div id="menu-header">
             <div class="panel-header">
                 <h1><span class="icon2-logo"></span>Spokane Maps</h1>
             </div>
@@ -65,8 +65,7 @@
                 <button type="button" class="material-icons md-dark" onclick="toggleMenu();">clear</button>
             </div>
         </div>
-
-        <div class="menu-container">
+        <div id="menu-container" class="menu-container">
             <ul class="menu-list">
                 <li class="menu-list-item"><a onclick="openSubMenu('#alert-panel');"><span class="material-icons md-dark orange600">add_alert</span><span>Setup email alerts</span></a></li>
                 <li class="menu-list-item"><a onclick="openSubMenu('#filter-panel');"><span class="material-icons md-dark">place</span><span>Filter permits</span></a></li>
@@ -85,13 +84,12 @@
             </ul>
             <p style="color:#999; padding-top:1em; font-size:90%;">* Future Implementation TBD</p>
         </div>
-
     </div>
 
 
-    <!--Submenu Panels-->
+    <!--Content Panels-->
     <!--alerts-->
-    <div id="alert-panel" class="container submenu shadow2">
+    <div id="alert-panel" class="container panel panel-right container-shadow2">
         <div>
             <div class="panel-header">
                 <h1><span class="material-icons md-dark orange600">add_alert</span>Email Alerts</h1>
@@ -105,7 +103,7 @@
         </div>
     </div>
     <!--filters-->
-    <div id="filter-panel" class="container submenu shadow2">
+    <div id="filter-panel" class="container submenu container-shadow2">
         <div>
             <div class="panel-header">
                 <h1><span class="material-icons md-dark">place</span>Filter Permits</h1>
@@ -119,7 +117,7 @@
         </div>
     </div>
     <!--legend-->
-    <div id="legend-panel" class="container submenu shadow2">
+    <div id="legend-panel" class="container submenu container-shadow2">
         <div>
             <div class="panel-header">
                 <h1><span class="material-icons md-dark">list</span>Map Legend</h1>
@@ -135,7 +133,7 @@
 
 
     <!--Account-->
-    <div id="account-panel" class="container account shadow1">
+    <div id="account-panel" class="container account container-shadow1">
         <div>
             <div class="panel-header">
                 <h1><span class="material-icons md-dark">person</span>My account</h1>
