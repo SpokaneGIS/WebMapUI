@@ -27,16 +27,16 @@ button { background-color: transparent; }
         .toolbar .tool-btn .tool-text { padding-right: .25em; }
 
 /*search bar*/
-.searchbox { background-color: #fff; display: block; height: 3em; line-height: 3em; min-width: 20em; margin: 0 auto; padding: 0; z-index: 1001; position: absolute; top: .5em; right: auto; bottom: auto; left: .5em; }
-    .searchbox div { float: left; }
+.searchbox { background-color: #fff; display: table; height: 3em; line-height: 3em; min-width: 20em; margin: 0 auto; padding: 0; z-index: 1001; position: absolute; top: .5em; right: auto; bottom: auto; left: .5em; }
+    .searchbox div { /*float: left;*/ display: table-cell; }
     .searchbox .searchbox-btn-container { width: 3em; }
     .searchbox .searchbox-btn { height: 3em; line-height: 3em; width: 3em; }
     .searchbox .searchbox-input-container { padding: .75em 0 .75em 1em; width: auto; }
         .searchbox .searchbox-input-container input { border: none; height: 1.5em; line-height: 1.5em; width: 100%; }
-    .searchbox .searchbox-logo-container { padding: .5em .75em; }
-    .searchbox .searchbox-title-container { padding: .5em 0.5em .5em 0; }
+    .searchbox .searchbox-logo-container { padding: .5em .75em; width: 3em; }
+    .searchbox .searchbox-title-container { display: block; padding: .5em 0.5em .5em 0; }
         .searchbox .searchbox-title-container h1 { height: 2em; line-height: 2em; }
-    .searchbox .searchbox-vertical-divider { border-right: 1px solid #ddd; height: 2em; padding: 0; width: 1px; position: relative; top: .5em; }
+    .searchbox .searchbox-vertical-divider { border-right: 1px solid #ddd; height: 2em; width: 1px; position: absolute; top: .5em; }
 
 
 /*Main menu - slide out left*/
@@ -90,7 +90,7 @@ button { background-color: transparent; }
 .material-icons.md-48 { font-size: 48px; }
 /*Colors*/
 .material-icons { background-color: transparent; }
-    .material-icons.md-dark { color: rgba(0, 0, 0, 0.64); }
+    .material-icons.md-dark { color: rgba(0, 0, 0, 0.74); }
         .material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
     .material-icons.md-light { color: rgba(255, 255, 255, 1); }
         .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
@@ -98,12 +98,11 @@ button { background-color: transparent; }
     .material-icons.green600 { color: #43A047; }
 
 @media (max-width: 768px) {
-    .toolbar, .leaflet-control-attribution, .branding, .esri-leaflet-logo, .searchbox-title-container { display: none; }
+    .toolbar, .leaflet-control-attribution, .branding, .esri-leaflet-logo, .searchbox-title-container { display: none !important; }
     .searchbox-input-container { padding: .75em 0; }
+    .searchbox { top: 0; right: 0; bottom: auto; left: 0;  min-width: 0; margin: .25em .25em 0 .25em; }
 }
 
 @media (max-width: 320px) {
-    /*.searchbox { top: 0; right: 0; bottom: auto; left: 0; }*/
-    /*.searchbox, .searchbox div { display: block; }
-        .searchbox div { float: left; }*/
+    /*.searchbox { top: 0; right: 0; bottom: auto; left: 0;  min-width: 0; margin: .25em .25em 0 .25em; }*/
 }
