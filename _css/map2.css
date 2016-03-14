@@ -1,6 +1,6 @@
 ﻿* { border: 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-family: Roboto,arial,sans-serif; font-size: 1em; line-height: 1em; margin: 0; padding: 0; vertical-align: middle; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; }
-html, body, #map, #map-disabled { height: 100%; width: 100%; }
-body { background-color: #fff; overflow: hidden; }
+html, body { height: 100%; width: 100%; }
+body { background-color: #fff; overflow: hidden; font-size: 1em; }
 p { line-height: 1.25em; padding: 0.25em 0.25em 0.5em; text-align: left; }
 h1 { margin: 0 auto; padding: 0; font-size: 1em; line-height: 1.5em; height: 1.5em; }
 textarea:focus, input:focus { outline: none; }
@@ -10,6 +10,7 @@ a, button { cursor: pointer; }
 button { background-color: transparent; }
 
 /*Map*/
+#map, #map-disabled { height: 100%; width: 100%; }
 #map { position: relative; }
 #map-disabled { background-color: #000; display: none; margin: 0 auto; padding: 0; opacity: .3; z-index: 1002; position: absolute; top: 0; right: auto; bottom: auto; left: 0; }
 
@@ -20,21 +21,22 @@ button { background-color: transparent; }
 
 /*toolbar*/
 .toolbar { background-color: #fff; display: block; height: 3em; line-height: 3em; margin: 0 auto; padding: 0; width: auto; z-index: 1000; position: absolute; top: .5em; right: .5em; bottom: auto; left: auto; }
-    .toolbar .tool-container { float: left; display: inline-block; height: 3em; line-height: 3em; margin: 0; }
+    .toolbar div { display: inline-block; float: left; }
     .toolbar .tool-btn { background-color: #fff; height: 3em; line-height: 3em; padding: 0 .5em; }
         .toolbar .tool-btn:hover { background-color: #ddd; }
         .toolbar .tool-btn .tool-text { padding-right: .25em; }
 
 /*search bar*/
-.searchbox { background-color: #fff; display: block; height: 3em; line-height: 3em; margin: 0 auto; min-width: 20em; padding: 0; z-index: 1001; position: absolute; top: .5em; right: auto; bottom: auto; left: .5em; }
-    .searchbox div { float: left; position: relative; }
-    .searchbox .searchbox-btn-container { width: 3.5em; }
-    .searchbox .searchbox-btn { padding: .75em 1em; }
-    .searchbox .searchbox-input-container { padding: .75em 0 .75em 1em; width: 12.5em; }
+.searchbox { background-color: #fff; display: block; height: 3em; line-height: 3em; min-width: 20em; margin: 0 auto; padding: 0; z-index: 1001; position: absolute; top: .5em; right: auto; bottom: auto; left: .5em; }
+    .searchbox div { float: left; }
+    .searchbox .searchbox-btn-container { width: 3em; }
+    .searchbox .searchbox-btn { height: 3em; line-height: 3em; width: 3em; }
+    .searchbox .searchbox-input-container { padding: .75em 0 .75em 1em; width: auto; }
         .searchbox .searchbox-input-container input { border: none; height: 1.5em; line-height: 1.5em; width: 100%; }
-    .searchbox .searchbox-title-container { display: block; padding: .5em .75em; }
-        .searchbox .searchbox-title-container h1 span { padding-right: .25em; }
-    .searchbox .searchbox-vertical-divider { border-right: 1px solid #ddd; height: 2em; padding: 0; top: .5em; }
+    .searchbox .searchbox-logo-container { padding: .5em .75em; }
+    .searchbox .searchbox-title-container { padding: .5em 0.5em .5em 0; }
+        .searchbox .searchbox-title-container h1 { height: 2em; line-height: 2em; }
+    .searchbox .searchbox-vertical-divider { border-right: 1px solid #ddd; height: 2em; padding: 0; width: 1px; position: relative; top: .5em; }
 
 
 /*Main menu - slide out left*/
@@ -96,10 +98,12 @@ button { background-color: transparent; }
     .material-icons.green600 { color: #43A047; }
 
 @media (max-width: 768px) {
-    .toolbar, .leaflet-control-attribution, .branding, .esri-leaflet-logo, .searchbox-title-container, .searchbox-divider-container { display: none; }
+    .toolbar, .leaflet-control-attribution, .branding, .esri-leaflet-logo, .searchbox-title-container { display: none; }
     .searchbox-input-container { padding: .75em 0; }
 }
 
 @media (max-width: 320px) {
-    .searchbox { top: 0; right: 0; bottom: auto; left: 0; }
+    /*.searchbox { top: 0; right: 0; bottom: auto; left: 0; }*/
+    /*.searchbox, .searchbox div { display: block; }
+        .searchbox div { float: left; }*/
 }
