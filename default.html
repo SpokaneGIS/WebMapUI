@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="_css/icon.css" />
-    <link rel="stylesheet" href="_css/map1.0.0.css" />
+    <link rel="stylesheet" href="_css/map1.0.1.css" />
 
     <script src="//cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet.js"></script>
     <script src="//cdn.jsdelivr.net/leaflet.esri/2.0.0-beta.7/esri-leaflet.js"></script>
@@ -18,114 +18,147 @@
 </head>
 <body>
     <div id="map" />
-    <div id="map-disabled" class="container"></div>
+    <div id="map-disabled"></div>
 
     <!--Search box-->
-    <div id="search" class="container search shadow1">
-        <div>
-            <button type="button" class="material-icons md-dark" onclick="toggleMenu();">menu</button>
+    <div id="searchbox" class="searchbox container-shadow1">
+        <div class="searchbox-btn-container">
+            <button type="button" class="searchbox-btn" onclick="toggleMenu();"><span class="material-icons md-dark">menu</span></button>
         </div>
-        <div class="search-divider"></div>
-        <div class="search-title">
-            <h1><span class="icon3-logo"></span>Permits</h1>
-        </div>
-        <div class="search-divider search-title"></div>
-        <div>
-            <form>
-                <input type="text" class="search-input" placeholder="Find an address" />
+        <div class="searchbox-vertical-divider"></div>
+        <div class="searchbox-input-container">
+            <form id="searchbox-form">
+                <input type="text" placeholder="Find an address" />
             </form>
         </div>
-        <div>
-            <button type="button" class="material-icons md-dark">search</button>
+        <div id="searchbox-btn-container" class="searchbox-btn-container">
+            <button type="button" class="searchbox-btn"><span class="material-icons md-dark">search</span></button>
+        </div>
+        <div class="searchbox-vertical-divider"></div>
+        <div class="searchbox-logo-container">
+            <span class="icon2-logo"></span>
+        </div>
+        <div class="searchbox-title-container">
+            <h1>Permits</h1>
         </div>
     </div>
 
 
     <!--Toolbar-->
-    <div id="toolbar" class="container toolbar shadow1">
-        <div class="toolbar-item">
-            <button type="button" class="toolbar-button" onclick="openSubMenu('#alert-panel');"><span class="text">Alerts</span><span class="material-icons md-dark orange600">add_alert</span></button>
+    <div id="toolbar" class="toolbar container-shadow1">
+        <div>
+            <button type="button" class="tool-btn" onclick="openSubMenu('#alert-panel');"><span class="tool-text">Alerts</span><span class="material-icons md-dark orange600">add_alert</span></button>
         </div>
-        <div class="toolbar-item">
-            <button type="button" class="toolbar-button" onclick="openSubMenu('#filter-panel');"><span class="text">Filters</span><span class="material-icons md-dark">place</span></button>
+        <div>
+            <button type="button" class="tool-btn" onclick="openSubMenu('#filter-panel');"><span class="tool-text">Filters</span><span class="material-icons md-dark">place</span></button>
         </div>
-        <div class="toolbar-item">
-            <button type="button" class="toolbar-button" onclick="openAccountPanel('#account-panel');"><span class="text">Account</span><span class="material-icons md-dark">person</span></button>
+        <div>
+            <button type="button" class="tool-btn" onclick="openAccountPanel('#account-panel');"><span class="tool-text">Account</span><span class="material-icons md-dark">person</span></button>
         </div>
     </div>
 
 
     <!--Map control menu-->
-    <div id="menu" class="container menu">
-        <div>
-            <div class="panel-header">
+    <div id="menu" class="container panel panel-left">
+        <div id="menu-header" class="panel-header">
+            <div class="panel-title">
                 <h1><span class="icon2-logo"></span>Spokane Maps</h1>
             </div>
             <div class="panel-close">
-                <button type="button" class="material-icons md-dark" onclick="toggleMenu();">clear</button>
+                <button type="button" onclick="toggleMenu();"><span class="material-icons md-dark">clear</span></button>
             </div>
         </div>
-
-        <div class="menu-content">
-            <ul>
-                <li><a onclick="openSubMenu('#alert-panel');"><span class="material-icons md-dark orange600">add_alert</span><span>Setup email alerts</span></a></li>
-                <li><a onclick="openSubMenu('#filter-panel');"><span class="material-icons md-dark">place</span><span>Filter permits</span></a></li>
-                <li><a class="inactive"><span class="material-icons md-dark md-inactive">assessment</span><span>Analytics*</span></a></li>
+        <div id="menu-container" class="menu-container">
+            <ul class="menu-list">
+                <li class="menu-list-item"><a onclick="openSubMenu('#alert-panel');"><span class="material-icons md-dark orange600">add_alert</span><span>Setup email alerts</span></a></li>
+                <li class="menu-list-item"><a onclick="openSubMenu('#filter-panel');"><span class="material-icons md-dark">place</span><span>Filter permits</span></a></li>
+                <li class="menu-list-item"><a class="inactive"><span class="material-icons md-dark md-inactive">assessment</span><span>Analytics*</span></a></li>
             </ul>
-            <ul>
-                <li><a onclick="openAccountPanel('#account-panel');"><span class="material-icons md-dark green600">person</span><span>My account</span></a></li>
+            <ul class="menu-list">
+                <li class="menu-list-item"><a onclick="openAccountPanel('#account-panel');"><span class="material-icons md-dark green600">person</span><span>My account</span></a></li>
             </ul>
-            <ul>
-                <li><a><span class="material-icons md-dark">map</span><span>Street map</span></a></li>
-                <li><a><span class="material-icons md-dark md-inactive">satellite</span><span>Satellite map</span></a></li>
+            <ul class="menu-list">
+                <li class="menu-list-item"><a><span class="material-icons md-dark">map</span><span>Street map</span></a></li>
+                <li class="menu-list-item"><a><span class="material-icons md-dark md-inactive">satellite</span><span>Satellite map</span></a></li>
             </ul>
-            <ul>
-                <li><a onclick="openSubMenu('#legend-panel');"><span class="material-icons md-dark">list</span><span>Map legend</span></a></li>
-                <li><a class="inactive"><span class="material-icons md-dark md-inactive">share</span><span>Share link*</span></a></li>
+            <ul class="menu-list">
+                <li class="menu-list-item"><a onclick="openSubMenu('#legend-panel');"><span class="material-icons md-dark">list</span><span>Map legend</span></a></li>
+                <li class="menu-list-item"><a class="inactive"><span class="material-icons md-dark md-inactive">share</span><span>Share link*</span></a></li>
             </ul>
             <p style="color:#999; padding-top:1em; font-size:90%;">* Future Implementation TBD</p>
         </div>
-
     </div>
 
 
-    <!--Submenu Panels-->
+    <!--Content Panels-->
     <!--alerts-->
-    <div id="alert-panel" class="container submenu shadow2">
-        <div>
-            <div class="panel-header">
+    <div id="alert-panel" class="container panel panel-right container-shadow2">
+        <div class="panel-header">
+            <div class="panel-title">
                 <h1><span class="material-icons md-dark orange600">add_alert</span>Email Alerts</h1>
             </div>
             <div class="panel-close">
-                <button type="button" class="material-icons md-dark" onclick="closeSubMenu('#alert-panel');">clear</button>
+                <button type="button" onclick="closeSubMenu('#alert-panel');"><span class="material-icons md-dark">clear</span></button>
             </div>
         </div>
         <div class="submenu-content">
 
         </div>
     </div>
+
     <!--filters-->
-    <div id="filter-panel" class="container submenu shadow2">
-        <div>
-            <div class="panel-header">
+    <div id="filter-panel" class="container submenu container-shadow2">
+        <div class="panel-header">
+            <div class="panel-title">
                 <h1><span class="material-icons md-dark">place</span>Filter Permits</h1>
             </div>
             <div class="panel-close">
-                <button type="button" class="material-icons md-dark" onclick="closeSubMenu('#filter-panel');">clear</button>
+                <button type="button" onclick="closeSubMenu('#filter-panel');"><span class="material-icons md-dark">clear</span></button>
             </div>
         </div>
         <div class="submenu-content">
-
+            <form id="formPermit">
+                <fieldset>
+                    <legend>Current Permit Status</legend>
+                    <p>
+                        <input type="checkbox" class="inputCheckbox" id="cbIssued" value="Issued" onclick="updateMapStatus();" checked="checked" />
+                        <label for="Issued">Issued</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" class="inputCheckbox" id="cbInReview" value="In Review" onclick="updateMapStatus();" checked="checked">
+                        <label for="InReview">In Review</label><br />
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Filter By Date Opened</legend>
+                    <p>
+                        <select id="selectDateRange" onchange="updateDateRange(this.value)">
+                            <option value="30" selected="selected">Past month</option>
+                            <option value="90">Past 3 months</option>
+                            <option value="180" disabled="disabled">Past 6 months</option>
+                        </select>
+                    </p>
+                </fieldset>
+            </form>
+            <form id="formKeyword" onsubmit="searchByKeyword(this.inputPermitSearch.value); return false;">
+                <fieldset>
+                    <legend>Search By Keywords</legend>
+                    <p>
+                        <input id="inputPermitSearch" placeholder="Enter keywords" type="text" maxlength="100" />
+                    </p>
+                </fieldset>
+            </form>
         </div>
     </div>
+
     <!--legend-->
-    <div id="legend-panel" class="container submenu shadow2">
-        <div>
-            <div class="panel-header">
+    <div id="legend-panel" class="container submenu container-shadow2">
+        <div class="panel-header">
+            <div class="panel-title">
                 <h1><span class="material-icons md-dark">list</span>Map Legend</h1>
             </div>
             <div class="panel-close">
-                <button type="button" class="material-icons md-dark" onclick="closeSubMenu('#legend-panel');">clear</button>
+                <button type="button" onclick="closeSubMenu('#legend-panel');"><span class="material-icons md-dark">clear</span></button>
             </div>
         </div>
         <div class="submenu-content">
@@ -135,13 +168,13 @@
 
 
     <!--Account-->
-    <div id="account-panel" class="container account shadow1">
-        <div>
-            <div class="panel-header">
+    <div id="account-panel" class="container panel panel-center container-shadow1">
+        <div class="panel-header">
+            <div class="panel-title">
                 <h1><span class="material-icons md-dark">person</span>My account</h1>
             </div>
             <div class="panel-close">
-                <button type="button" class="material-icons md-dark" onclick="closeAccountPanel('#account-panel');">clear</button>
+                <button type="button" onclick="closeAccountPanel('#account-panel');"><span class="material-icons md-dark">clear</span></button>
             </div>
         </div>
         <div class="submenu-content">
@@ -152,7 +185,7 @@
 
     <!--Results-->
     <div id="data" class="container data">
-        
+
     </div>
 
 
@@ -163,6 +196,6 @@
 
 
     <!--Map Scripts-->
-    <script src="_script/map1.0.0.js"></script>
+    <script src="_script/map1.0.1.js"></script>
 </body>
 </html>
