@@ -65,17 +65,31 @@ button { background-color: transparent; }
     .panel-close button { height: 3em; line-height: 3em; width: 3em; }
 /*panel content*/
 .panel-content { background-color: #fff; color: rgba(0,0,0,.75); height: 100%; margin: 0 auto; overflow: auto; padding: 1.25em; width: 100%; }
-.panel-content-divider { border-top: 1px solid #ccc; padding-top: 1em; }
+.panel-content-divider { border-top: 1px solid #ccc; }
 
 /*panel forms*/
-.panel-form fieldset, .panel-form div { padding-bottom: 2em; }
-.panel-form legend { padding-bottom: .625em; }
+.panel-form div { padding-bottom: 2em; }
+.panel-form legend, .panel-form-subtitle { padding-bottom: 0.75em; }
+.panel-form-subtitle-sm { font-size: 90%; padding-left: 0.5em; }
 .panel-form input[type="text"], select { border: 1px solid #ccc; color: inherit; border-radius: 3px; width: 100%; height: 2.5em; padding: 0 .5em; line-height: 1.5em; outline: none; box-shadow: inset 0 1px 2px rgba(0,0,0,0.075); }
 .panel-form input[type="checkbox"] { display: inline-block; height: 1.25em; width: 1.25em; line-height: 1.25em; padding: 0.625em; }
     .panel-form input[type="checkbox"] + label { display: inline-block; line-height: 1.25em; padding: 0.625em; }
 
-.panel-form-subtitle { padding-bottom: 0.625em; }
-.panel-form-subtitle-sm { font-size: 90%; padding-left: 0.5em; }
+/*Util*/
+.mt-1 { margin-top: .25em !important; }
+.mt-2 { margin-top: .5em !important; }
+.mt-3 { margin-top: .75em !important; }
+.mt-4 { margin-top: 1em !important; }
+
+.pt-1 { padding-top: .25em !important; }
+.pt-2 { padding-top: .5em !important; }
+.pt-3 { padding-top: .75em !important; }
+.pt-4 { padding-top: 1em !important; }
+
+select { color: gray; }
+option[value=""][disabled] { display: none; }
+option { color: black; }
+
 
 
 /*Buttons*/
@@ -113,7 +127,7 @@ button { background-color: transparent; }
 .material-icons.md-48 { font-size: 48px; }
 /*Colors*/
 .material-icons { background-color: transparent; }
-    .material-icons.md-dark { color: rgba(0, 0, 0, 0.74); }
+    .material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
         .material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
     .material-icons.md-light { color: rgba(255, 255, 255, 1); }
         .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }

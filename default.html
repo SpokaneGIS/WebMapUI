@@ -72,7 +72,7 @@
             <ul class="menu-list">
                 <li class="menu-list-item"><a onclick="openSubMenu('#alert-panel');"><span class="material-icons md-dark orange600">add_alert</span><span>Setup email alerts</span></a></li>
                 <li class="menu-list-item"><a onclick="openSubMenu('#filter-panel');"><span class="material-icons md-dark">place</span><span>Filter permits</span></a></li>
-                <li class="menu-list-item"><a class="inactive"><span class="material-icons md-dark md-inactive">assessment</span><span>Analytics*</span></a></li>
+                <!--<li class="menu-list-item"><a class="inactive"><span class="material-icons md-dark md-inactive">assessment</span><span>Analytics*</span></a></li>-->
             </ul>
             <ul class="menu-list">
                 <li class="menu-list-item"><a onclick="openAccountPanel('#account-panel');"><span class="material-icons md-dark green600">person</span><span>My account</span></a></li>
@@ -83,9 +83,8 @@
             </ul>
             <ul class="menu-list">
                 <li class="menu-list-item"><a onclick="openSubMenu('#legend-panel');"><span class="material-icons md-dark">list</span><span>Map legend</span></a></li>
-                <li class="menu-list-item"><a class="inactive"><span class="material-icons md-dark md-inactive">share</span><span>Share link*</span></a></li>
+                <!--<li class="menu-list-item"><a class="inactive"><span class="material-icons md-dark md-inactive">share</span><span>Share link*</span></a></li>-->
             </ul>
-            <p style="color:#999; padding-top:1em; font-size:90%;">* Future Implementation TBD</p>
         </div>
     </div>
 
@@ -103,30 +102,40 @@
         </div>
         <div class="panel-content">
             <form id="alert-form" class="panel-form">
-                <fieldset>
-                    <legend>1. Set your search distance</legend>
-                    <p>
-                        <select id="selectDistance" onchange="updatePoint();">
-                            <option value="500">500 feet</option>
-                            <option value="1000">1000 Feet</option>
-                            <option value="2640">1/2 Mile</option>
-                        </select>
-                    </p>
-                </fieldset>
                 <div>
-                    <p class="panel-form-subtitle">2. Add a point to the map</p>
-                    <a href="#" onclick="addPoint();" class="btn btn-primary"><span>Add</span></a><a href="#" onclick="clearMap();" class="btn btn-secondary"><span>Remove</span></a>
+                    <fieldset>
+                        <legend>1. Drop a point on the map with the following search distance:</legend>
+                        <p>
+                            <select id="selectDistance" onchange="updatePoint();">
+                                <option value="500">500 feet</option>
+                                <option value="1000">1000 feet</option>
+                                <option value="2640">1/2 mile</option>
+                            </select>
+                        </p>
+                    </fieldset>
+                    <a href="#" onclick="addPoint();" class="btn btn-primary mt-3"><span>Add</span></a><a href="#" onclick="clearMap();" class="btn btn-secondary mt-3"><span>Remove</span></a>
                 </div>
                 <div>
                     <fieldset>
-                        <legend>3. Save it</legend>
+                        <legend>...Or select a neighborhood:</legend>
+                        <p>
+                            <select id="select-neighborhood" onchange="">
+                                <option value="" disabled>Please Choose...</option>
+                                <option value="1">Neighborhood 1</option>
+                                <option value="2">Neighborhood 2</option>
+                            </select>
+                        </p>
+                    </fieldset>
+                </div>
+                <div>
+                    <fieldset>
+                        <legend>2. Save the alert:</legend>
                         <input id="inputNotificationName" placeholder="Enter a name" type="text" />
                     </fieldset>
-                    <a href="#" onclick="savePoint();" class="btn btn-primary"><span>Save Notification</span></a>
+                    <a href="#" onclick="savePoint();" class="btn btn-full mt-3"><span>Save Alert</span></a>
                 </div>
-                <div id="divManageNotifications" class="panel-content-divider">
-                    <p id="pNumNotifications" class="panel-form-subtitle"></p>
-                    <p class="panel-form-subtitle-sm">To manage exisiting notifications select them on the map</p>
+                <div id="manage-alerts" class="panel-content-divider pt-3">
+                    <p class="panel-form-subtitle-sm"><span class="material-icons md-dark">warning</span>You have <span id="alert-number">(2)</span> exisiting alert. To manage your alerts select them on the map.</p>
                 </div>
 
             </form>
@@ -134,7 +143,7 @@
     </div>
 
     <!--filters-->
-    <div id="filter-panel" class="container submenu container-shadow2">
+    <div id="filter-panel" class="container panel panel-right container-shadow2">
         <div class="panel-header">
             <div class="panel-title">
                 <h1><span class="material-icons md-dark">place</span>Filter Permits</h1>
@@ -145,41 +154,47 @@
         </div>
         <div class="panel-content">
             <form id="filter-form" class="panel-form">
-                <fieldset>
-                    <legend>Filter permits by application status:</legend>
-                    <p>
-                        <input type="checkbox" class="inputCheckbox" id="cbIssued" value="Issued" onclick="updateMapStatus();" checked="checked" />
-                        <label for="Issued">Issued</label>
-                    </p>
-                    <p>
-                        <input type="checkbox" class="inputCheckbox" id="cbInReview" value="In Review" onclick="updateMapStatus();" checked="checked">
-                        <label for="InReview">In Review</label><br />
-                    </p>
-                </fieldset>
-                <fieldset>
-                    <legend>Filter permits by date opened:</legend>
-                    <p>
-                        <select id="selectDateRange" onchange="updateDateRange(this.value)">
-                            <option value="30" selected="selected">Past month</option>
-                            <option value="90">Past 3 months</option>
-                            <option value="180" disabled="disabled">Past 6 months</option>
-                        </select>
-                    </p>
-                </fieldset>
+                <div>
+                    <fieldset>
+                        <legend>Filter permits by application status:</legend>
+                        <p>
+                            <input type="checkbox" class="inputCheckbox" id="cbIssued" value="Issued" onclick="updateMapStatus();" checked="checked" />
+                            <label for="Issued">Issued</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" class="inputCheckbox" id="cbInReview" value="In Review" onclick="updateMapStatus();" checked="checked">
+                            <label for="InReview">In Review</label><br />
+                        </p>
+                    </fieldset>
+                </div>
+                <div>
+                    <fieldset>
+                        <legend>Filter permits by date opened:</legend>
+                        <p>
+                            <select id="selectDateRange" onchange="updateDateRange(this.value)">
+                                <option value="30" selected="selected">Past month</option>
+                                <option value="90">Past 3 months</option>
+                                <option value="180" disabled="disabled">Past 6 months</option>
+                            </select>
+                        </p>
+                    </fieldset>
+                </div>
             </form>
             <form id="keyword-form" class="panel-form" onsubmit="searchByKeyword(this.inputPermitSearch.value); return false;">
-                <fieldset>
-                    <legend>Find permits using keywords:</legend>
-                    <p>
-                        <input id="inputPermitSearch" placeholder="Enter keywords" type="text" maxlength="100" />
-                    </p>
-                </fieldset>
+                <div>
+                    <fieldset>
+                        <legend>Find permits using keywords:</legend>
+                        <p>
+                            <input id="inputPermitSearch" placeholder="Enter keywords" type="text" maxlength="100" />
+                        </p>
+                    </fieldset>
+                </div>
             </form>
         </div>
     </div>
 
     <!--legend-->
-    <div id="legend-panel" class="container submenu container-shadow2">
+    <div id="legend-panel" class="container panel panel-right container-shadow2">
         <div class="panel-header">
             <div class="panel-title">
                 <h1><span class="material-icons md-dark">list</span>Map Legend</h1>
@@ -188,7 +203,7 @@
                 <button type="button" onclick="closeSubMenu('#legend-panel');"><span class="material-icons md-dark">clear</span></button>
             </div>
         </div>
-        <div class="submenu-content">
+        <div class="panel-content">
 
         </div>
     </div>
@@ -204,14 +219,14 @@
                 <button type="button" onclick="closeAccountPanel('#account-panel');"><span class="material-icons md-dark">clear</span></button>
             </div>
         </div>
-        <div class="submenu-content">
+        <div class="panel-content">
 
         </div>
     </div>
 
 
     <!--Results-->
-    <div id="data" class="container data">
+    <div id="data" class="container panel panel-right container-shadow2">
 
     </div>
 
