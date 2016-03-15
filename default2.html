@@ -60,12 +60,12 @@
 
     <!--Map control menu-->
     <div id="menu" class="container panel panel-left">
-        <div id="menu-header">
-            <div class="panel-header">
+        <div id="menu-header" class="panel-header">
+            <div class="panel-title">
                 <h1><span class="icon2-logo"></span>Spokane Maps</h1>
             </div>
             <div class="panel-close">
-                <button type="button" class="material-icons md-dark" onclick="toggleMenu();">clear</button>
+                <button type="button" onclick="toggleMenu();"><span class="material-icons md-dark">clear</span></button>
             </div>
         </div>
         <div id="menu-container" class="menu-container">
@@ -93,12 +93,12 @@
     <!--Content Panels-->
     <!--alerts-->
     <div id="alert-panel" class="container panel panel-right container-shadow2">
-        <div>
-            <div class="panel-header">
+        <div class="panel-header">
+            <div class="panel-title">
                 <h1><span class="material-icons md-dark orange600">add_alert</span>Email Alerts</h1>
             </div>
             <div class="panel-close">
-                <button type="button" class="material-icons md-dark" onclick="closeSubMenu('#alert-panel');">clear</button>
+                <button type="button" onclick="closeSubMenu('#alert-panel');"><span class="material-icons md-dark">clear</span></button>
             </div>
         </div>
         <div class="submenu-content">
@@ -107,12 +107,12 @@
     </div>
     <!--filters-->
     <div id="filter-panel" class="container submenu container-shadow2">
-        <div>
-            <div class="panel-header">
+        <div class="panel-header">
+            <div class="panel-title">
                 <h1><span class="material-icons md-dark">place</span>Filter Permits</h1>
             </div>
             <div class="panel-close">
-                <button type="button" class="material-icons md-dark" onclick="closeSubMenu('#filter-panel');">clear</button>
+                <button type="button" onclick="closeSubMenu('#filter-panel');"><span class="material-icons md-dark">clear</span></button>
             </div>
         </div>
         <div class="submenu-content">
@@ -121,12 +121,12 @@
     </div>
     <!--legend-->
     <div id="legend-panel" class="container submenu container-shadow2">
-        <div>
-            <div class="panel-header">
+        <div class="panel-header">
+            <div class="panel-title">
                 <h1><span class="material-icons md-dark">list</span>Map Legend</h1>
             </div>
             <div class="panel-close">
-                <button type="button" class="material-icons md-dark" onclick="closeSubMenu('#legend-panel');">clear</button>
+                <button type="button" onclick="closeSubMenu('#legend-panel');"><span class="material-icons md-dark">clear</span></button>
             </div>
         </div>
         <div class="submenu-content">
@@ -137,12 +137,12 @@
 
     <!--Account-->
     <div id="account-panel" class="container panel panel-center container-shadow1">
-        <div>
-            <div class="panel-header">
+        <div class="panel-header">
+            <div class="panel-title">
                 <h1><span class="material-icons md-dark">person</span>My account</h1>
             </div>
             <div class="panel-close">
-                <button type="button" class="material-icons md-dark" onclick="closeAccountPanel('#account-panel');">clear</button>
+                <button type="button" onclick="closeAccountPanel('#account-panel');"><span class="material-icons md-dark">clear</span></button>
             </div>
         </div>
         <div class="submenu-content">

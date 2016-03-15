@@ -59,11 +59,12 @@ button { background-color: transparent; }
 
 
 /*panel header*/
-.panel-header { background-color: #eee; border-bottom: 1px solid #ccc; height: 3em; line-height: 3em; position: relative; }
-    .panel-header h1 { height: 3em; line-height: 3em; padding: 0 .5em; }
-        .panel-header h1 span { padding-right: .5em; }
-.panel-close { background-color: #eee; border-bottom: 1px solid #ccc; height: 3em; line-height: 3em; text-align: center; width: 3em; position: absolute; top: 0; right: 0; bottom: auto; left: auto; }
-    .panel-close button { padding: .5em; }
+.panel-header { border-bottom: 1px solid #ccc; }
+.panel-title { background-color: #eee; height: 3em; line-height: 3em; position: relative; }
+    .panel-title h1 { height: 3em; line-height: 3em; padding: 0 .5em; }
+        .panel-title h1 span { padding-right: .5em; }
+.panel-close { background-color: #eee; width: 3em; position: absolute; top: 0; right: 0; bottom: auto; left: auto; }
+    .panel-close button { height: 3em; line-height: 3em; width: 3em; }
 
 
 /*Submenu forms*/
@@ -100,7 +101,7 @@ button { background-color: transparent; }
 @media (max-width: 768px) {
     .toolbar, .leaflet-control-attribution, .branding, .esri-leaflet-logo, .searchbox-title-container { display: none !important; }
     .searchbox-input-container { padding: .75em 0; }
-    .searchbox { top: 0; right: 0; bottom: auto; left: 0;  min-width: 0; margin: .25em .25em 0 .25em; }
+    .searchbox { top: 0; right: 0; bottom: auto; left: 0; min-width: 0; margin: .25em .25em 0 .25em; }
 }
 
 @media (max-width: 320px) {
