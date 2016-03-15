@@ -106,4 +106,5 @@ button { background-color: transparent; }
 
 @media (max-width: 320px) {
     /*.searchbox { top: 0; right: 0; bottom: auto; left: 0;  min-width: 0; margin: .25em .25em 0 .25em; }*/
+    #searchbox-btn-container { display: none !important; }
 }
