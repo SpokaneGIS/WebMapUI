@@ -72,6 +72,7 @@
             <ul class="menu-list">
                 <li class="menu-list-item"><a onclick="openSubMenu('#alert-panel');"><span class="material-icons md-dark orange600">add_alert</span><span>Setup email alerts</span></a></li>
                 <li class="menu-list-item"><a onclick="openSubMenu('#filter-panel');"><span class="material-icons md-dark">place</span><span>Filter permits</span></a></li>
+                <li class="menu-list-item"><a onclick="openSubMenu('#alert-manage-panel');"><span class="material-icons md-dark">notifications_active</span><span>Manage my alerts</span></a></li>
                 <!--<li class="menu-list-item"><a class="inactive"><span class="material-icons md-dark md-inactive">assessment</span><span>Analytics*</span></a></li>-->
             </ul>
             <ul class="menu-list">
@@ -143,103 +144,137 @@
     </div>
 
     <!--Todo: Manage alerts-->
-
-    <!--filters-->
-    <div id="filter-panel" class="container panel panel-right container-shadow2">
+    <div id="alert-manage-panel" class="container panel panel-right container-shadow2">
         <div class="panel-header">
             <div class="panel-title">
-                <h1><span class="material-icons md-dark">place</span>Filter Permits</h1>
+                <h1><span class="material-icons md-dark">notifications_active</span>Manage my alerts</h1>
             </div>
             <div class="panel-close">
-                <button type="button" onclick="closeSubMenu('#filter-panel');"><span class="material-icons md-dark">clear</span></button>
+                <button type="button" onclick="closeSubMenu('#alert-manage-panel');"><span class="material-icons md-dark">clear</span></button>
             </div>
         </div>
         <div class="panel-content">
-            <form id="filter-form" class="panel-form">
-                <div>
-                    <fieldset>
-                        <legend>Filter permits by application status:</legend>
-                        <p>
-                            <input type="checkbox" class="inputCheckbox" id="cbIssued" value="Issued" onclick="updateMapStatus();" checked="checked" />
-                            <label for="Issued">Issued</label>
-                        </p>
-                        <p>
-                            <input type="checkbox" class="inputCheckbox" id="cbInReview" value="In Review" onclick="updateMapStatus();" checked="checked">
-                            <label for="InReview">In Review</label><br />
-                        </p>
-                    </fieldset>
+            <div class="alert">
+                <h2 class="alert-label">Alert Name</h2>
+                <p class="alert-value">My first alert</p>
+                <p class="alert-value"><a>go to map</a></p>
+                <h2 class="alert-label">Created</h2>
+                <p class="alert-value">3/16/2016</p>
+                <h2 class="alert-label">Type</h2>
+                <p class="alert-value">500 foot radius</p>
+                <h2 class="alert-label">Frequency</h2>
+                <p class="alert-value">Daily alerts</p>
+            </div>
+            <div class="alert">
+                <h2 class="alert-label">Alert Name</h2>
+                <p class="alert-value">My second alert</p>
+                <p class="alert-value"><a>go to map</a></p>
+                <h2 class="alert-label">Created</h2>
+                <p class="alert-value">3/16/2016</p>
+                <h2 class="alert-label">Type</h2>
+                <p class="alert-value">Logan neighborhood</p>
+                <h2 class="alert-label">Frequency</h2>
+                <p class="alert-value">Daily alerts</p>
+            </div>
+        </div>
+    </div>
+
+        <!--filters-->
+        <div id="filter-panel" class="container panel panel-right container-shadow2">
+            <div class="panel-header">
+                <div class="panel-title">
+                    <h1><span class="material-icons md-dark">place</span>Filter Permits</h1>
                 </div>
-                <div>
-                    <fieldset>
-                        <legend>Filter permits by date opened:</legend>
-                        <p>
-                            <select id="selectDateRange" onchange="updateDateRange(this.value)">
-                                <option value="30" selected="selected">Past month</option>
-                                <option value="90">Past 3 months</option>
-                                <option value="180" disabled="disabled">Past 6 months</option>
-                            </select>
-                        </p>
-                    </fieldset>
+                <div class="panel-close">
+                    <button type="button" onclick="closeSubMenu('#filter-panel');"><span class="material-icons md-dark">clear</span></button>
                 </div>
-            </form>
-            <form id="keyword-form" class="panel-form" onsubmit="searchByKeyword(this.inputPermitSearch.value); return false;">
-                <div>
-                    <fieldset>
-                        <legend>Find permits using keywords:</legend>
-                        <p>
-                            <input id="inputPermitSearch" placeholder="Enter keywords" type="text" maxlength="100" />
-                        </p>
-                    </fieldset>
+            </div>
+            <div class="panel-content">
+                <form id="filter-form" class="panel-form">
+                    <div>
+                        <fieldset>
+                            <legend>Filter permits by application status:</legend>
+                            <p>
+                                <input type="checkbox" class="inputCheckbox" id="cbIssued" value="Issued" onclick="updateMapStatus();" checked="checked" />
+                                <label for="Issued">Issued</label>
+                            </p>
+                            <p>
+                                <input type="checkbox" class="inputCheckbox" id="cbInReview" value="In Review" onclick="updateMapStatus();" checked="checked">
+                                <label for="InReview">In Review</label><br />
+                            </p>
+                        </fieldset>
+                    </div>
+                    <div>
+                        <fieldset>
+                            <legend>Filter permits by date opened:</legend>
+                            <p>
+                                <select id="selectDateRange" onchange="updateDateRange(this.value)">
+                                    <option value="30" selected="selected">Past month</option>
+                                    <option value="90">Past 3 months</option>
+                                    <option value="180" disabled="disabled">Past 6 months</option>
+                                </select>
+                            </p>
+                        </fieldset>
+                    </div>
+                </form>
+                <form id="keyword-form" class="panel-form" onsubmit="searchByKeyword(this.inputPermitSearch.value); return false;">
+                    <div>
+                        <fieldset>
+                            <legend>Find permits using keywords:</legend>
+                            <p>
+                                <input id="inputPermitSearch" placeholder="Enter keywords" type="text" maxlength="100" />
+                            </p>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!--legend-->
+        <div id="legend-panel" class="container panel panel-right container-shadow2">
+            <div class="panel-header">
+                <div class="panel-title">
+                    <h1><span class="material-icons md-dark">list</span>Map Legend</h1>
                 </div>
-            </form>
-        </div>
-    </div>
-
-    <!--legend-->
-    <div id="legend-panel" class="container panel panel-right container-shadow2">
-        <div class="panel-header">
-            <div class="panel-title">
-                <h1><span class="material-icons md-dark">list</span>Map Legend</h1>
+                <div class="panel-close">
+                    <button type="button" onclick="closeSubMenu('#legend-panel');"><span class="material-icons md-dark">clear</span></button>
+                </div>
             </div>
-            <div class="panel-close">
-                <button type="button" onclick="closeSubMenu('#legend-panel');"><span class="material-icons md-dark">clear</span></button>
+            <div class="panel-content">
+
             </div>
         </div>
-        <div class="panel-content">
-
-        </div>
-    </div>
 
 
-    <!--Account-->
-    <div id="account-panel" class="container panel panel-center container-shadow1">
-        <div class="panel-header">
-            <div class="panel-title">
-                <h1><span class="material-icons md-dark">person</span>My account</h1>
+        <!--Account-->
+        <div id="account-panel" class="container panel panel-center container-shadow1">
+            <div class="panel-header">
+                <div class="panel-title">
+                    <h1><span class="material-icons md-dark">person</span>My account</h1>
+                </div>
+                <div class="panel-close">
+                    <button type="button" onclick="closeAccountPanel('#account-panel');"><span class="material-icons md-dark">clear</span></button>
+                </div>
             </div>
-            <div class="panel-close">
-                <button type="button" onclick="closeAccountPanel('#account-panel');"><span class="material-icons md-dark">clear</span></button>
+            <div class="panel-content">
+
             </div>
         </div>
-        <div class="panel-content">
+
+
+        <!--Results-->
+        <div id="data" class="container panel panel-right container-shadow2">
 
         </div>
-    </div>
 
 
-    <!--Results-->
-    <div id="data" class="container panel panel-right container-shadow2">
-
-    </div>
-
-
-    <!--Branding-->
-    <div class="container branding">
-        <h1>Spokane Maps</h1>
-    </div>
+        <!--Branding-->
+        <div class="container branding">
+            <h1>Spokane Maps</h1>
+        </div>
 
 
-    <!--Map Scripts-->
-    <script src="_script/map1.0.1.js"></script>
+        <!--Map Scripts-->
+        <script src="_script/map1.0.1.js"></script>
 </body>
 </html>

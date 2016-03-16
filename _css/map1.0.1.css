@@ -75,6 +75,14 @@ button { background-color: transparent; }
 .panel-form input[type="checkbox"] { display: inline-block; height: 1.25em; width: 1.25em; line-height: 1.25em; padding: 0.625em; }
     .panel-form input[type="checkbox"] + label { display: inline-block; line-height: 1.25em; padding: 0.625em; }
 
+/**/
+.alert { border-bottom: 1px solid #ccc; padding: 1.25em .5em; }
+    .alert:first-child { padding-top: 0; }
+    .alert:last-child { border-bottom: none; padding-bottom: 0; }
+.alert-label { padding-top: 1em; padding-bottom: .375em; }
+    .alert-label:first-child { padding-top: 0; }
+.alert-value { color: rgba(0,0,0,.55); }
+
 /*Util*/
 .mt-1 { margin-top: .25em !important; }
 .mt-2 { margin-top: .5em !important; }
