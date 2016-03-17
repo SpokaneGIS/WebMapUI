@@ -36,65 +36,52 @@ disableMapClick();
 //-------------------------------------//
 
 //UI
-function fade(id) {
-    $(id).fadeToggle("fast", "linear");
+function openMainMenu() {
+    hideAll('.panel-right');
+    $('#map-disabled').fadeIn("fast", "linear");
+    $('#menu').show('slide', { direction: 'left' }, 300);
 }
 
-function togglePanel(panelID, slideDirection) {
-    $(panelID).toggle('slide', { direction: slideDirection }, 300);
+function closeMainMenu() {
+    $('#map-disabled').fadeOut("fast", "linear");
+    $('#menu').hide('slide', { direction: 'left' }, 300);
 }
 
-function hidePanel(panelID, slideDirection) {
-    $(panelID).hide('slide', { direction: slideDirection }, 300);
-}
-
-function showPanel(panelID, slideDirection) {
-    $(panelID).show('slide', { direction: slideDirection }, 300);
-}
-
-function toggleMenu() {
-    fade('#map-disabled');
-    togglePanel('#menu', 'left');
-}
-
-function openSubMenu(panelID) {
-    //Hide all open 
-    $('.submenu').each(function () {
-        if ($(this).is(":visible"))
-            $(this).hide();
-    });
-    showPanel(panelID, 'right');
-    hidePanel('#menu', 'left');
+function openPanel(panelId) {
+    hideAll('.panel-right');
+    $('#menu').hide('slide', { direction: 'left' }, 300);
     if ($('#map-disabled').is(":visible"))
-        fade('#map-disabled');
+        $('#map-disabled').fadeOut("fast", "linear");
+    $(panelId).show('slide', { direction: 'right' }, 300);
 }
 
-function closeSubMenu(panelID) {
-    hidePanel(panelID, 'right');
+function closePanel(panelId) {
+    $(panelId).hide('slide', { direction: 'right' }, 300);
 }
 
-function toggleSubMenu() {
-    togglePanel('.submenu', 'right');
-}
-
-function openAccountPanel(panelID) {
-    $('.submenu').each(function () {
-        if ($(this).is(":visible"))
-            $(this).hide();
-    });
-    fade(panelID);
-    hidePanel('#menu', 'left');
+function openAccountPanel(panelId) {
+    hideAll('.panel-right');
+    $('#menu').hide('slide', { direction: 'left' }, 300);
     if (!$('#map-disabled').is(":visible"))
-        fade('#map-disabled');
+        $('#map-disabled').fadeIn("fast", "linear");
+    $(panelId).fadeIn("fast", "linear");
 }
 
-function closeAccountPanel(panelID) {
-    fade(panelID);
+function closeAccountPanel(panelId) {
     if ($('#map-disabled').is(":visible"))
-        fade('#map-disabled');
+        $('#map-disabled').fadeOut("fast", "linear");
+    $(panelId).fadeOut("fast", "linear");
 }
 
-//
+function hideAll(className) {
+    $(className).each(function () {
+        if ($(this).is(":visible"))
+            $(this).fadeOut("slow", "linear");
+    });
+}
+
+
+//Leaflet
 function disableMapClick() {
     var divs = ['divMenuBar', 'divLeft', 'divRight', 'mapDisabled'];
     for (var i = 0; i < divs.length; i++) {
@@ -108,3 +95,47 @@ function disableMapClick() {
     }
 }
 
+
+
+//Save
+//function toggleMenu() {
+//    hidePanels('.panel');
+//    fade('#map-disabled');
+//    togglePanel('#menu', 'left');
+//}
+
+//function toggleSubMenu() {
+//    togglePanel('.submenu', 'right');
+//}
+
+//function openSubMenu(panelID) {
+//    //Hide all open 
+//    $('.panel').each(function () {
+//        if ($(this).is(":visible"))
+//            $(this).hide();
+//    });
+//    showPanel(panelID, 'right');
+//    hidePanel('#menu', 'left');
+//    if ($('#map-disabled').is(":visible"))
+//        fade('#map-disabled');
+//}
+
+//function closeSubMenu(panelID) {
+//    hidePanel(panelID, 'right');
+//}
+
+//function fade(id) {
+//    $(id).fadeToggle("fast", "linear");
+//}
+
+//function togglePanel(panelID, slideDirection) {
+//    $(panelID).toggle('slide', { direction: slideDirection }, 300);
+//}
+
+//function hidePanel(panelID, slideDirection) {
+//    $(panelID).hide('slide', { direction: slideDirection }, 300);
+//}
+
+//function showPanel(panelID, slideDirection) {
+//    $(panelID).show('slide', { direction: slideDirection }, 300);
+//}

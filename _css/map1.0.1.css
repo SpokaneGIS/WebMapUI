@@ -13,13 +13,12 @@ select { color: gray; }
 option[value=""][disabled] { display: none; }
 option { color: black; }
 
-
 /*Map*/
 #map, #map-disabled { height: 100%; width: 100%; }
 #map { position: relative; }
 #map-disabled { background-color: #000; display: none; margin: 0 auto; padding: 0; opacity: .3; z-index: 1002; position: absolute; top: 0; right: auto; bottom: auto; left: 0; }
 
-/*Containers*/
+/*Containers on top of map*/
 .container { margin: 0 auto; padding: 0; position: absolute; }
 .container-shadow1 { box-shadow: 0 2px 4px rgba(0,0,0,0.2),0 -1px 0px rgba(0,0,0,0.02); }
 .container-shadow2 { box-shadow: 2px 2px 4px 4px rgba(0,0,0,0.15); }
@@ -33,7 +32,7 @@ option { color: black; }
 
 /*search bar*/
 .searchbox { background-color: #fff; display: table; height: 3em; line-height: 3em; min-width: 20em; margin: 0 auto; padding: 0; z-index: 1001; position: absolute; top: .5em; right: auto; bottom: auto; left: .5em; }
-    .searchbox div { /*float: left;*/ display: table-cell; }
+    .searchbox div { display: table-cell; }
     .searchbox .searchbox-btn-container { width: 3em; }
     .searchbox .searchbox-btn { height: 3em; line-height: 3em; width: 3em; }
     .searchbox .searchbox-input-container { padding: .75em 0 .75em 1em; width: auto; }
@@ -43,9 +42,7 @@ option { color: black; }
         .searchbox .searchbox-title-container h1 { height: 2em; line-height: 2em; }
     .searchbox .searchbox-vertical-divider { border-right: 1px solid #ddd; height: 2em; width: 1px; position: absolute; top: .5em; }
 
-
-/*Main menu - slide out left*/
-.menu { background-color: #fff; border-right: 1px solid #999; display: none; height: 100%; margin: 0 auto; padding: 0; width: 20em; z-index: 1003; position: absolute; top: 0; right: auto; bottom: 0; left: 0; }
+/*Main menu*/
 .menu-container { height: auto; margin: 0 auto; overflow: auto; padding: 1em; width: 100%; z-index: 1002; position: absolute; top: 3em; bottom: 0; left: 0; }
 .menu-list { border-bottom: 1px solid #ccc; padding: .5em 0; }
     .menu-list:first-child { padding: 0 0 .5em 0; }
@@ -71,7 +68,6 @@ option { color: black; }
 /*panel content*/
 .panel-content { background-color: #fff; color: rgba(0,0,0,.75); height: 100%; margin: 0 auto; overflow: auto; padding: 1.25em; width: 100%; }
 .panel-content-divider { border-top: 1px solid #ccc; }
-
 /*panel forms*/
 .panel-form div { padding-bottom: 2em; }
 .panel-form legend, .panel-form-subtitle { padding-bottom: 0.75em; }
@@ -103,10 +99,10 @@ option { color: black; }
 /*.submenu { background-color: #fff; border-left: 1px solid #ccc; display: none; height: 100%; width: 20em; z-index: 1004; top: 0; right: 0; bottom: 0; left: auto; }*/
 
 /*Account*/
-.account { background-color: #fff; border: 1px solid #ccc; display: none; height: 20em; width: 20em; z-index: 1004; top: 50%; right: auto; bottom: auto; left: 50%; margin: -10em 0 0 -10em; }
+/*.account { background-color: #fff; border: 1px solid #ccc; display: none; height: 20em; width: 20em; z-index: 1004; top: 50%; right: auto; bottom: auto; left: 50%; margin: -10em 0 0 -10em; }*/
 
 /*Query results - slide out right*/
-.data { background-color: #fff; border-left: 1px solid #ccc; display: none; height: 100%; width: 20em; max-width: 33%; z-index: 1003; top: 0; right: 0; bottom: 0; left: auto; }
+/*.data { background-color: #fff; border-left: 1px solid #ccc; display: none; height: 100%; width: 20em; max-width: 33%; z-index: 1003; top: 0; right: 0; bottom: 0; left: auto; }*/
 
 /*Branding*/
 .branding { background-color: transparent; border: none; display: block; height: 1.5em; width: 10em; z-index: 1004; top: auto; right: auto; bottom: .75em; left: 50%; margin: 0 0 0 -5em; }
@@ -130,17 +126,16 @@ option { color: black; }
 .pt-3 { padding-top: .75em !important; }
 .pt-4 { padding-top: 1em !important; }
 
-
 /*Leaflet overrides*/
 .leaflet-container { font-size: 1em; cursor: auto; }
 
 /*Google Material Icons*/
-/*Sizing*/
+/*size*/
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
-/*Colors*/
+/*color*/
 .material-icons { background-color: transparent; }
     .material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
         .material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
@@ -149,6 +144,7 @@ option { color: black; }
     .material-icons.orange600 { color: #FB8C00; }
     .material-icons.green600 { color: #43A047; }
 
+/*Responsive breakpoints*/
 @media (max-width: 768px) {
     .toolbar, .leaflet-control-attribution, .branding, .esri-leaflet-logo, .searchbox-title-container { display: none !important; }
     .searchbox-input-container { padding: .75em 0; }
@@ -156,6 +152,5 @@ option { color: black; }
 }
 
 @media (max-width: 320px) {
-    /*.searchbox { top: 0; right: 0; bottom: auto; left: 0;  min-width: 0; margin: .25em .25em 0 .25em; }*/
     #searchbox-btn-container { display: none !important; }
 }
