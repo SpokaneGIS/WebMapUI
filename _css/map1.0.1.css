@@ -1,4 +1,5 @@
-﻿* { border: 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-family: Roboto,arial,sans-serif; font-size: 1em; line-height: 1em; margin: 0; padding: 0; vertical-align: middle; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; }
+﻿/*Global*/
+* { border: 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-family: Roboto,arial,sans-serif; font-size: 1em; line-height: 1em; margin: 0; padding: 0; vertical-align: middle; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; }
 html, body { height: 100%; width: 100%; }
 body { background-color: #fff; overflow: hidden; font-size: 1em; }
 p { line-height: 1.25em; padding: 0; text-align: left; }
@@ -8,6 +9,10 @@ li { padding: 0; margin: 0 auto; }
 a, button { cursor: pointer; }
     a.inactive span { color: #ccc; }
 button { background-color: transparent; }
+select { color: gray; }
+option[value=""][disabled] { display: none; }
+option { color: black; }
+
 
 /*Map*/
 #map, #map-disabled { height: 100%; width: 100%; }
@@ -75,53 +80,27 @@ button { background-color: transparent; }
 .panel-form input[type="checkbox"] { display: inline-block; height: 1.25em; width: 1.25em; line-height: 1.25em; padding: 0.625em; }
     .panel-form input[type="checkbox"] + label { display: inline-block; line-height: 1.25em; padding: 0.625em; }
 
-/**/
+/*Alerts*/
 .alert { border-bottom: 1px solid #ccc; padding: 1.25em .5em; }
     .alert:first-child { padding-top: 0; }
     .alert:last-child { border-bottom: none; padding-bottom: 0; }
-.alert-label { padding-top: 1em; padding-bottom: .375em; }
+.alert-label { padding-top: 1em; padding-bottom: .375em; font-size: 95%;}
     .alert-label:first-child { padding-top: 0; }
-.alert-value { color: rgba(0,0,0,.55); }
-
-/*Util*/
-.mt-1 { margin-top: .25em !important; }
-.mt-2 { margin-top: .5em !important; }
-.mt-3 { margin-top: .75em !important; }
-.mt-4 { margin-top: 1em !important; }
-
-.ml-1 { margin-left: .25em !important; }
-.ml-2 { margin-left: .5em !important; }
-.ml-3 { margin-left: .75em !important; }
-.ml-4 { margin-left: 1em !important; }
-
-.ml-n1 { margin-left: -.25em !important; }
-.ml-n2 { margin-left: -.5em !important; }
-.ml-n3 { margin-left: -.75em !important; }
-.ml-n4 { margin-left: -1em !important; }
-
-.pt-1 { padding-top: .25em !important; }
-.pt-2 { padding-top: .5em !important; }
-.pt-3 { padding-top: .75em !important; }
-.pt-4 { padding-top: 1em !important; }
-
-select { color: gray; }
-option[value=""][disabled] { display: none; }
-option { color: black; }
-
-
+.alert-value { color: rgba(0,0,0,.65); font-size: 90%;}
 
 /*Buttons*/
 .btn { background-color: #069; border: 1px solid #777; border-radius: 3px; color: #fff !important; display: inline-block; margin-right: 1em; padding: 0.5em 1em; text-decoration: none; text-align: center; }
     .btn:hover { background-color: #777; }
     .btn span { display: inline-block; }
     .btn.btn-full { width: 100%; }
-    .btn.btn-secondary { background-color: #aaa; }
+    .btn.btn-secondary { background-color: #ccc; color: #069 !important; }
     .btn.btn-primary { margin-right: 1em; }
+    .btn.btn-danger { background-color: #ccc; color: #f00 !important;}
     .btn.btn-noborder { border: none; }
-
+    .btn.btn-sm { padding: 0.375em .625em; font-size:90%; }
 
 /*Submenu forms*/
-.submenu { background-color: #fff; border-left: 1px solid #ccc; display: none; height: 100%; width: 20em; z-index: 1004; top: 0; right: 0; bottom: 0; left: auto; }
+/*.submenu { background-color: #fff; border-left: 1px solid #ccc; display: none; height: 100%; width: 20em; z-index: 1004; top: 0; right: 0; bottom: 0; left: auto; }*/
 
 /*Account*/
 .account { background-color: #fff; border: 1px solid #ccc; display: none; height: 20em; width: 20em; z-index: 1004; top: 50%; right: auto; bottom: auto; left: 50%; margin: -10em 0 0 -10em; }
@@ -132,6 +111,24 @@ option { color: black; }
 /*Branding*/
 .branding { background-color: transparent; border: none; display: block; height: 1.5em; width: 10em; z-index: 1004; top: auto; right: auto; bottom: .75em; left: 50%; margin: 0 0 0 -5em; }
     .branding h1 { color: rgba(0, 0, 0, 0.54); font-size: 90%; text-align: center; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); }
+
+/*Utils*/
+.mt-1 { margin-top: .25em !important; }
+.mt-2 { margin-top: .5em !important; }
+.mt-3 { margin-top: .75em !important; }
+.mt-4 { margin-top: 1em !important; }
+.ml-1 { margin-left: .25em !important; }
+.ml-2 { margin-left: .5em !important; }
+.ml-3 { margin-left: .75em !important; }
+.ml-4 { margin-left: 1em !important; }
+.ml-n1 { margin-left: -.25em !important; }
+.ml-n2 { margin-left: -.5em !important; }
+.ml-n3 { margin-left: -.75em !important; }
+.ml-n4 { margin-left: -1em !important; }
+.pt-1 { padding-top: .25em !important; }
+.pt-2 { padding-top: .5em !important; }
+.pt-3 { padding-top: .75em !important; }
+.pt-4 { padding-top: 1em !important; }
 
 
 /*Leaflet overrides*/
