@@ -47,9 +47,9 @@ option { color: black; }
 .menu-list { border-bottom: 1px solid #ccc; padding: .5em 0; }
     .menu-list:first-child { padding: 0 0 .5em 0; }
     .menu-list:last-child { border-bottom: none; }
-.menu-list-item { list-style: none; padding: 0.375em; }
+.menu-list-item { list-style: none;  margin: 0 auto; padding: 0; }
     .menu-list-item:hover { background-color: #ddd; }
-    .menu-list-item a { display: inline-block; width: 100%; color: rgba(0, 0, 0, .75); font-size: 95%; }
+    .menu-list-item a { display: inline-block; width: 100%; color: rgba(0, 0, 0, .75); font-size: 95%; padding: .75em; }
     .menu-list-item span:first-child { width: 15%; }
     .menu-list-item span:last-child { width: 85%; }
 
