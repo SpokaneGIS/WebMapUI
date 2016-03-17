@@ -43,11 +43,11 @@ option { color: black; }
     .searchbox .searchbox-vertical-divider { border-right: 1px solid #ddd; height: 2em; width: 1px; position: absolute; top: .5em; }
 
 /*Main menu*/
-.menu-container { height: auto; margin: 0 auto; overflow: auto; padding: 1em; width: 100%; /*z-index: 1002; position: absolute; top: 3em; bottom: 0; left: 0;*/ }
+.menu-container { height: auto; margin: 0 auto; overflow: auto; padding: 1em; width: 100%; }
 .menu-list { border-bottom: 1px solid #ccc; padding: .5em 0; }
     .menu-list:first-child { padding: 0 0 .5em 0; }
     .menu-list:last-child { border-bottom: none; }
-.menu-list-item { list-style: none;  margin: 0 auto; padding: 0; }
+.menu-list-item { list-style: none; margin: 0 auto; padding: 0; }
     .menu-list-item:hover { background-color: #ddd; }
     .menu-list-item a { display: inline-block; width: 100%; color: rgba(0, 0, 0, .75); font-size: 95%; padding: .75em; }
     .menu-list-item span:first-child { width: 15%; }
@@ -161,14 +161,3 @@ share: &#xE80D;
 @media (max-width: 320px) {
     #searchbox-btn-container { display: none !important; }
 }
-
-
-/*Save*/
-/*Submenu forms*/
-/*.submenu { background-color: #fff; border-left: 1px solid #ccc; display: none; height: 100%; width: 20em; z-index: 1004; top: 0; right: 0; bottom: 0; left: auto; }*/
-
-/*Account*/
-/*.account { background-color: #fff; border: 1px solid #ccc; display: none; height: 20em; width: 20em; z-index: 1004; top: 50%; right: auto; bottom: auto; left: 50%; margin: -10em 0 0 -10em; }*/
-
-/*Query results - slide out right*/
-/*.data { background-color: #fff; border-left: 1px solid #ccc; display: none; height: 100%; width: 20em; max-width: 33%; z-index: 1003; top: 0; right: 0; bottom: 0; left: auto; }*/
