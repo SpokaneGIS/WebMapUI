@@ -2,7 +2,7 @@
 * { border: 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; font-family: Roboto,arial,sans-serif; font-size: 1em; line-height: 1em; margin: 0; padding: 0; vertical-align: middle; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; }
 html, body { height: 100%; width: 100%; }
 body { background-color: #fff; overflow: hidden; font-size: 1em; }
-p { line-height: 1.25em; padding: 0; text-align: left; }
+p, legend { line-height: 1.25em; padding: 0; text-align: left; }
 h1 { margin: 0 auto; padding: 0; font-size: 1em; line-height: 1.5em; height: 1.5em; }
 textarea:focus, input:focus { outline: none; }
 li { padding: 0; margin: 0 auto; }
@@ -70,6 +70,7 @@ option { color: black; }
 .panel-content-divider { border-top: 1px solid #ccc; }
 /*panel forms*/
 .panel-form div { padding-bottom: 2em; }
+.panel-form legend { white-space: normal; display: table; }
 .panel-form legend, .panel-form-subtitle { padding-bottom: 0.75em; }
 .panel-form-subtitle-sm { font-size: 90%; padding-left: 0.5em; }
 .panel-form input[type="text"], select { border: 1px solid #ccc; color: inherit; border-radius: 3px; width: 100%; height: 2.5em; padding: 0 .5em; line-height: 1.5em; outline: none; box-shadow: inset 0 1px 2px rgba(0,0,0,0.075); }
