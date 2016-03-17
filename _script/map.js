@@ -36,13 +36,13 @@ disableMapClick();
 //-------------------------------------//
 
 //UI
-function openMainMenu() {
+function openMenu() {
     hideAll('.panel-right');
     $('#map-disabled').fadeIn("fast", "linear");
     $('#menu').show('slide', { direction: 'left' }, 300);
 }
 
-function closeMainMenu() {
+function closeMenu() {
     $('#map-disabled').fadeOut("fast", "linear");
     $('#menu').hide('slide', { direction: 'left' }, 300);
 }

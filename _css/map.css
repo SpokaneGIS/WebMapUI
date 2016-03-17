@@ -19,19 +19,19 @@ option { color: black; }
 #map-disabled { background-color: #000; display: none; margin: 0 auto; padding: 0; opacity: .3; z-index: 1002; position: absolute; top: 0; right: auto; bottom: auto; left: 0; }
 
 /*Containers on top of map*/
-.container { margin: 0 auto; padding: 0; position: absolute; }
+.container { background-color: #fff; margin: 0 auto; padding: 0; position: absolute; }
 .container-shadow1 { box-shadow: 0 2px 4px rgba(0,0,0,0.2),0 -1px 0px rgba(0,0,0,0.02); }
 .container-shadow2 { box-shadow: 2px 2px 4px 4px rgba(0,0,0,0.15); }
 
-/*toolbar*/
-.toolbar { background-color: #fff; display: block; height: 3em; line-height: 3em; margin: 0 auto; padding: 0; width: auto; z-index: 1000; position: absolute; top: .5em; right: .5em; bottom: auto; left: auto; }
+/*Toolbar*/
+.toolbar { display: block; height: 3em; line-height: 3em; width: auto; z-index: 1000; top: .5em; right: .5em; bottom: auto; left: auto; }
     .toolbar div { display: inline-block; float: left; }
     .toolbar .tool-btn { background-color: #fff; height: 3em; line-height: 3em; padding: 0 .5em; }
         .toolbar .tool-btn:hover { background-color: #ddd; }
         .toolbar .tool-btn .tool-text { padding-right: .25em; }
 
-/*search bar*/
-.searchbox { background-color: #fff; display: table; height: 3em; line-height: 3em; min-width: 20em; margin: 0 auto; padding: 0; z-index: 1001; position: absolute; top: .5em; right: auto; bottom: auto; left: .5em; }
+/*Search bar*/
+.searchbox { display: table; height: 3em; line-height: 3em; min-width: 20em; z-index: 1001; top: .5em; right: auto; bottom: auto; left: .5em; }
     .searchbox div { display: table-cell; }
     .searchbox .searchbox-btn-container { width: 3em; }
     .searchbox .searchbox-btn { height: 3em; line-height: 3em; width: 3em; }
@@ -43,7 +43,7 @@ option { color: black; }
     .searchbox .searchbox-vertical-divider { border-right: 1px solid #ddd; height: 2em; width: 1px; position: absolute; top: .5em; }
 
 /*Main menu*/
-.menu-container { height: auto; margin: 0 auto; overflow: auto; padding: 1em; width: 100%; z-index: 1002; position: absolute; top: 3em; bottom: 0; left: 0; }
+.menu-container { height: auto; margin: 0 auto; overflow: auto; padding: 1em; width: 100%; /*z-index: 1002; position: absolute; top: 3em; bottom: 0; left: 0;*/ }
 .menu-list { border-bottom: 1px solid #ccc; padding: .5em 0; }
     .menu-list:first-child { padding: 0 0 .5em 0; }
     .menu-list:last-child { border-bottom: none; }
@@ -80,9 +80,9 @@ option { color: black; }
 .alert { border-bottom: 1px solid #ccc; padding: 1.25em .5em; }
     .alert:first-child { padding-top: 0; }
     .alert:last-child { border-bottom: none; padding-bottom: 0; }
-.alert-label { padding-top: 1em; padding-bottom: .375em; font-size: 95%;}
+.alert-label { padding-top: 1em; padding-bottom: .375em; font-size: 95%; }
     .alert-label:first-child { padding-top: 0; }
-.alert-value { color: rgba(0,0,0,.65); font-size: 90%;}
+.alert-value { color: rgba(0,0,0,.65); font-size: 90%; }
 
 /*Buttons*/
 .btn { background-color: #069; border: 1px solid #777; border-radius: 3px; color: #fff !important; display: inline-block; margin-right: 1em; padding: 0.5em 1em; text-decoration: none; text-align: center; }
@@ -91,18 +91,9 @@ option { color: black; }
     .btn.btn-full { width: 100%; }
     .btn.btn-secondary { background-color: #ccc; color: #069 !important; }
     .btn.btn-primary { margin-right: 1em; }
-    .btn.btn-danger { background-color: #ccc; color: #f00 !important;}
+    .btn.btn-danger { background-color: #ccc; color: #f00 !important; }
     .btn.btn-noborder { border: none; }
-    .btn.btn-sm { padding: 0.375em .625em; font-size:90%; }
-
-/*Submenu forms*/
-/*.submenu { background-color: #fff; border-left: 1px solid #ccc; display: none; height: 100%; width: 20em; z-index: 1004; top: 0; right: 0; bottom: 0; left: auto; }*/
-
-/*Account*/
-/*.account { background-color: #fff; border: 1px solid #ccc; display: none; height: 20em; width: 20em; z-index: 1004; top: 50%; right: auto; bottom: auto; left: 50%; margin: -10em 0 0 -10em; }*/
-
-/*Query results - slide out right*/
-/*.data { background-color: #fff; border-left: 1px solid #ccc; display: none; height: 100%; width: 20em; max-width: 33%; z-index: 1003; top: 0; right: 0; bottom: 0; left: auto; }*/
+    .btn.btn-sm { padding: 0.375em .625em; font-size: 90%; }
 
 /*Branding*/
 .branding { background-color: transparent; border: none; display: block; height: 1.5em; width: 10em; z-index: 1004; top: auto; right: auto; bottom: .75em; left: 50%; margin: 0 0 0 -5em; }
@@ -144,6 +135,22 @@ option { color: black; }
     .material-icons.orange600 { color: #FB8C00; }
     .material-icons.green600 { color: #43A047; }
 
+/*Icons in use
+menu: &#xE5D2;
+search: &#xE8B6;
+add_alert: &#xE003;
+place: &#xE55F;
+person: &#xE7FD;
+clear: &#xE14C;
+warning: &#xE002;
+notifications: &#xE7F4;
+assessment: &#xE85C;
+map: &#xE55B;
+satellite: &#xE562;
+list: &#xE896;
+share: &#xE80D;
+*/
+
 /*Responsive breakpoints*/
 @media (max-width: 768px) {
     .toolbar, .leaflet-control-attribution, .branding, .esri-leaflet-logo, .searchbox-title-container { display: none !important; }
@@ -154,3 +161,14 @@ option { color: black; }
 @media (max-width: 320px) {
     #searchbox-btn-container { display: none !important; }
 }
+
+
+/*Save*/
+/*Submenu forms*/
+/*.submenu { background-color: #fff; border-left: 1px solid #ccc; display: none; height: 100%; width: 20em; z-index: 1004; top: 0; right: 0; bottom: 0; left: auto; }*/
+
+/*Account*/
+/*.account { background-color: #fff; border: 1px solid #ccc; display: none; height: 20em; width: 20em; z-index: 1004; top: 50%; right: auto; bottom: auto; left: 50%; margin: -10em 0 0 -10em; }*/
+
+/*Query results - slide out right*/
+/*.data { background-color: #fff; border-left: 1px solid #ccc; display: none; height: 100%; width: 20em; max-width: 33%; z-index: 1003; top: 0; right: 0; bottom: 0; left: auto; }*/

@@ -21,9 +21,9 @@
     <div id="map-disabled"></div>
 
     <!--Search box-->
-    <div id="searchbox" class="searchbox container-shadow1">
+    <div id="searchbox" class="container searchbox container-shadow1">
         <div class="searchbox-btn-container">
-            <button type="button" class="searchbox-btn" onclick="openMainMenu();"><span class="material-icons md-dark">menu</span></button>
+            <button type="button" class="searchbox-btn" onclick="openMenu();"><span class="material-icons md-dark">&#xE5D2;</span></button>
         </div>
         <div class="searchbox-vertical-divider"></div>
         <div class="searchbox-input-container">
@@ -32,7 +32,7 @@
             </form>
         </div>
         <div id="searchbox-btn-container" class="searchbox-btn-container">
-            <button type="button" class="searchbox-btn"><span class="material-icons md-dark">search</span></button>
+            <button type="button" class="searchbox-btn"><span class="material-icons md-dark">&#xE8B6;</span></button>
         </div>
         <div class="searchbox-vertical-divider"></div>
         <div class="searchbox-logo-container">
@@ -43,20 +43,18 @@
         </div>
     </div>
 
-
     <!--Toolbar-->
-    <div id="toolbar" class="toolbar container-shadow1">
+    <div id="toolbar" class="container toolbar container-shadow1">
         <div>
-            <button type="button" class="tool-btn" onclick="openPanel('#alert-panel');"><span class="tool-text">Alerts</span><span class="material-icons md-dark orange600">add_alert</span></button>
+            <button type="button" class="tool-btn" onclick="openPanel('#alert-panel');"><span class="tool-text">Alerts</span><span class="material-icons md-dark orange600">&#xE003;</span></button>
         </div>
         <div>
-            <button type="button" class="tool-btn" onclick="openPanel('#filter-panel');"><span class="tool-text">Filters</span><span class="material-icons md-dark">place</span></button>
+            <button type="button" class="tool-btn" onclick="openPanel('#filter-panel');"><span class="tool-text">Filters</span><span class="material-icons md-dark">&#xE55F;</span></button>
         </div>
         <div>
-            <button type="button" class="tool-btn" onclick="openAccountPanel('#account-panel');"><span class="tool-text">Account</span><span class="material-icons md-dark">person</span></button>
+            <button type="button" class="tool-btn" onclick="openAccountPanel('#account-panel');"><span class="tool-text">Account</span><span class="material-icons md-dark">&#xE7FD;</span></button>
         </div>
     </div>
-
 
     <!--Map control menu-->
     <div id="menu" class="container panel panel-left">
@@ -65,40 +63,39 @@
                 <h1><span class="icon2-logo"></span>Spokane Maps</h1>
             </div>
             <div class="panel-close">
-                <button type="button" onclick="closeMainMenu();"><span class="material-icons md-dark">clear</span></button>
+                <button type="button" onclick="closeMenu();"><span class="material-icons md-dark">clear</span></button>
             </div>
         </div>
         <div id="menu-container" class="menu-container">
             <ul class="menu-list">
-                <li class="menu-list-item"><a onclick="openPanel('#alert-panel');"><span class="material-icons md-dark orange600">add_alert</span><span>Setup email alerts</span></a></li>
-                <li class="menu-list-item"><a onclick="openPanel('#filter-panel');"><span class="material-icons md-dark">place</span><span>Filter permits</span></a></li>
-                <li class="menu-list-item"><a onclick="openPanel('#alert-manage-panel');"><span class="material-icons md-dark">notifications_active</span><span>Manage my alerts</span></a></li>
-                <!--<li class="menu-list-item"><a class="inactive"><span class="material-icons md-dark md-inactive">assessment</span><span>Analytics*</span></a></li>-->
+                <li class="menu-list-item"><a onclick="openPanel('#alert-panel');"><span class="material-icons md-dark orange600">&#xE003;</span><span>Setup email alerts</span></a></li>
+                <li class="menu-list-item"><a onclick="openPanel('#filter-panel');"><span class="material-icons md-dark">&#xE55F;</span><span>Filter permits</span></a></li>
+                <li class="menu-list-item"><a onclick="openPanel('#alert-manage-panel');"><span class="material-icons md-dark md-inactive">&#xE7F4;</span><span>Manage my alerts</span></a></li>
+                <!--<li class="menu-list-item"><a class="inactive"><span class="material-icons md-dark md-inactive">&#xE85C;</span><span>Analytics*</span></a></li>-->
             </ul>
             <ul class="menu-list">
-                <li class="menu-list-item"><a onclick="openAccountPanel('#account-panel');"><span class="material-icons md-dark green600">person</span><span>My account</span></a></li>
+                <li class="menu-list-item"><a onclick="openAccountPanel('#account-panel');"><span class="material-icons md-dark green600">&#xE7FD;</span><span>My account</span></a></li>
             </ul>
             <ul class="menu-list">
-                <li class="menu-list-item"><a><span class="material-icons md-dark">map</span><span>Street map</span></a></li>
-                <li class="menu-list-item"><a><span class="material-icons md-dark md-inactive">satellite</span><span>Satellite map</span></a></li>
+                <li class="menu-list-item"><a><span class="material-icons md-dark">&#xE55B;</span><span>Street map</span></a></li>
+                <li class="menu-list-item"><a><span class="material-icons md-dark md-inactive">&#xE562;</span><span>Satellite map</span></a></li>
             </ul>
             <ul class="menu-list">
-                <li class="menu-list-item"><a onclick="openPanel('#legend-panel');"><span class="material-icons md-dark">list</span><span>Map legend</span></a></li>
-                <!--<li class="menu-list-item"><a class="inactive"><span class="material-icons md-dark md-inactive">share</span><span>Share link*</span></a></li>-->
+                <li class="menu-list-item"><a onclick="openPanel('#legend-panel');"><span class="material-icons md-dark">&#xE896;</span><span>Map legend</span></a></li>
+                <!--<li class="menu-list-item"><a class="inactive"><span class="material-icons md-dark md-inactive">&#xE80D;</span><span>Share link*</span></a></li>-->
             </ul>
         </div>
     </div>
-
 
     <!--Content Panels-->
     <!--alerts-->
     <div id="alert-panel" class="container panel panel-right container-shadow2">
         <div class="panel-header">
             <div class="panel-title">
-                <h1><span class="material-icons md-dark orange600">add_alert</span>Setup Email Alerts</h1>
+                <h1><span class="material-icons md-dark orange600">&#xE003;</span>Setup Email Alerts</h1>
             </div>
             <div class="panel-close">
-                <button type="button" onclick="closePanel('#alert-panel');"><span class="material-icons md-dark">clear</span></button>
+                <button type="button" onclick="closePanel('#alert-panel');"><span class="material-icons md-dark">&#xE14C;</span></button>
             </div>
         </div>
         <div class="panel-content">
@@ -136,28 +133,27 @@
                     <a href="#" onclick="savePoint();" class="btn btn-full mt-3"><span>Save Alert</span></a>
                 </div>
                 <div id="manage-alerts" class="panel-content-divider pt-3">
-                    <p class="panel-form-subtitle-sm"><span class="material-icons md-dark">warning</span>You have <span id="alert-number">(2)</span> exisiting alert. To manage your alerts select them on the map.</p>
+                    <p class="panel-form-subtitle-sm"><span class="material-icons md-dark">&#xE002;</span>You have <span id="alert-number">(2)</span> exisiting alert. To manage your alerts select them on the map.</p>
                 </div>
 
             </form>
         </div>
     </div>
 
-
     <!--Todo: Manage alerts-->
     <div id="alert-manage-panel" class="container panel panel-right container-shadow2">
         <div class="panel-header">
             <div class="panel-title">
-                <h1><span class="material-icons md-dark">notifications_active</span>Manage my alerts</h1>
+                <h1><span class="material-icons md-dark">&#xE7F4;</span>Manage my alerts</h1>
             </div>
             <div class="panel-close">
-                <button type="button" onclick="closePanel('#alert-manage-panel');"><span class="material-icons md-dark">clear</span></button>
+                <button type="button" onclick="closePanel('#alert-manage-panel');"><span class="material-icons md-dark">&#xE14C;</span></button>
             </div>
         </div>
         <div class="panel-content">
             <div class="alert">
                 <h2 class="alert-label">Name</h2>
-                <p class="alert-value"><span class="material-icons md-dark orange600 ml-n2">notifications</span>My first saved alert</p>
+                <p class="alert-value"><span class="material-icons md-dark orange600 ml-n2">&#xE7F4;</span>My first saved alert</p>
                 <h2 class="alert-label">Created</h2>
                 <p class="alert-value">3/16/2016</p>
                 <h2 class="alert-label">Type</h2>
@@ -169,7 +165,7 @@
             </div>
             <div class="alert">
                 <h2 class="alert-label">Name</h2>
-                <p class="alert-value"><span class="material-icons md-dark orange600 ml-n2">notifications</span>My second saved alert</p>
+                <p class="alert-value"><span class="material-icons md-dark orange600 ml-n2">&#xE7F4;</span>My second saved alert</p>
                 <h2 class="alert-label">Created</h2>
                 <p class="alert-value">3/16/2016</p>
                 <h2 class="alert-label">Type</h2>
@@ -182,15 +178,14 @@
         </div>
     </div>
 
-
     <!--filters-->
     <div id="filter-panel" class="container panel panel-right container-shadow2">
         <div class="panel-header">
             <div class="panel-title">
-                <h1><span class="material-icons md-dark">place</span>Filter Permits</h1>
+                <h1><span class="material-icons md-dark">&#xE55F;</span>Filter Permits</h1>
             </div>
             <div class="panel-close">
-                <button type="button" onclick="closePanel('#filter-panel');"><span class="material-icons md-dark">clear</span></button>
+                <button type="button" onclick="closePanel('#filter-panel');"><span class="material-icons md-dark">&#xE14C;</span></button>
             </div>
         </div>
         <div class="panel-content">
@@ -234,50 +229,45 @@
         </div>
     </div>
 
-
     <!--legend-->
     <div id="legend-panel" class="container panel panel-right container-shadow2">
         <div class="panel-header">
             <div class="panel-title">
-                <h1><span class="material-icons md-dark">list</span>Map Legend</h1>
+                <h1><span class="material-icons md-dark">&#xE896;</span>Map Legend</h1>
             </div>
             <div class="panel-close">
-                <button type="button" onclick="closePanel('#legend-panel');"><span class="material-icons md-dark">clear</span></button>
+                <button type="button" onclick="closePanel('#legend-panel');"><span class="material-icons md-dark">&#xE14C;</span></button>
             </div>
         </div>
         <div class="panel-content">
 
         </div>
     </div>
-
 
     <!--Account-->
     <div id="account-panel" class="container panel panel-center container-shadow1">
         <div class="panel-header">
             <div class="panel-title">
-                <h1><span class="material-icons md-dark">person</span>My account</h1>
+                <h1><span class="material-icons md-dark">&#xE7FD;</span>My account</h1>
             </div>
             <div class="panel-close">
-                <button type="button" onclick="closeAccountPanel('#account-panel');"><span class="material-icons md-dark">clear</span></button>
+                <button type="button" onclick="closeAccountPanel('#account-panel');"><span class="material-icons md-dark">&#xE14C;</span></button>
             </div>
         </div>
         <div class="panel-content">
 
         </div>
     </div>
-
 
     <!--Results-->
     <div id="data-panel" class="container panel panel-right container-shadow2">
 
     </div>
 
-
     <!--Branding-->
     <div class="container branding">
         <h1>Spokane Maps</h1>
     </div>
-
 
     <!--Map Scripts-->
     <script src="_script/map1.0.1.js"></script>
